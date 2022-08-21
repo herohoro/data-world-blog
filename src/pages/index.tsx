@@ -26,9 +26,9 @@ const RenderPage = () => (
       <p>
         I will leave the hard stuff to other sites.
         <br />
-        "Why do we need data analysis?"
+        &ldquo; Why do we need data analysis? &rdquo;
         <br />
-        "What good can come from doing data analysis?"
+        &ldquo; What good can come from doing data analysis? &rdquo;
         <br />
         Have you ever asked yourself these questions?
         <br />

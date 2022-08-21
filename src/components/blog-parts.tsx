@@ -90,12 +90,7 @@ export const NextPageLink = ({ firstPost, posts, tag = '' }) => {
     </div>
   )
 }
-export const NextBackPageLink = ({
-  firstPost,
-  posts,
-  tag = '',
-  category = '',
-}) => {
+export const NextBackPageLink = ({ firstPost, posts, tag = '' }) => {
   const router = useRouter()
   if (!firstPost) return null
   if (posts.length === 0) return null
