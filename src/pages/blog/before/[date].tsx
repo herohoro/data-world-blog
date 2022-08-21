@@ -6,7 +6,8 @@ import DocumentHead from '../../../components/document-head'
 import {
   BlogPostLink,
   BlogTagLink,
-  NextPageLink,
+  BackPageLink,
+  NextBackPageLink,
   NoContents,
   PostDate,
   PostExcerpt,
@@ -91,7 +92,7 @@ const RenderPostsBeforeDate = ({
 
         <NoContents contents={posts} />
 
-        {posts.map(post => {
+        {posts.map((post) => {
           return (
             <div className={styles.post} key={post.Slug}>
               <PostDate post={post} />
@@ -104,7 +105,8 @@ const RenderPostsBeforeDate = ({
         })}
 
         <footer>
-          <NextPageLink firstPost={firstPost} posts={posts} />
+          <NextBackPageLink firstPost={firstPost} posts={posts} />
+          <BackPageLink firstPost={firstPost} posts={posts} />
         </footer>
       </div>
 

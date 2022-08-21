@@ -27,5 +27,8 @@
   padding: 0 15px;
 }
 .header ul li :global(a.active) {
-  color: var(--accents-3);
+  background-color: var(--accents-4);
+  padding: 10px;
+  border-radius: 50%;
+  color: var(--fg);
 }

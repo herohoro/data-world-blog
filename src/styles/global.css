@@ -9,6 +9,7 @@
   --accents-1: #0070f3;
   --accents-2: #d932ff;
   --accents-3: rgb(175, 175, 175);
+  --accents-4: #8b32ff;
   --geist-foreground: #000;
   --geist-success: #690;
 
@@ -35,7 +36,8 @@ body {
 
 body {
   min-height: 100vh;
-  background: var(--bg);
+  /* background: var(--bg); */
+  background: linear-gradient(-135deg, #621075, #040d21);
   color: var(--fg);
   font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, Segoe UI,
     Hiragino Kaku Gothic ProN, Hiragino Sans, ヒラギノ角ゴ ProN W3, Arial,
@@ -48,7 +50,7 @@ body {
     radial-gradient(#ddd 1px, transparent 1px);*/
   background-position: 0 0, 25px 25px;
   background-attachment: fixed;
-  background-size: 50px 50px;
+  /* background-size: 50px 50px; */
 
   /* Hack */
   overflow-x: hidden;
