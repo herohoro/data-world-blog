@@ -1,5 +1,5 @@
 import React from 'react'
-import useSWR from "swr"
+import useSWR from 'swr'
 import axios from 'axios'
 
 import { NEXT_PUBLIC_URL } from '../../lib/notion/server-constants'
@@ -42,19 +42,14 @@ export async function getStaticProps({ params: { slug } }) {
     }
   }
 
-  const [
-    blocks,
-    rankedPosts,
-    recentPosts,
-    tags,
-    sameTagPosts,
-  ] = await Promise.all([
-    getAllBlocksByBlockId(post.PageId),
-    getRankedPosts(),
-    getPosts(5),
-    getAllTags(),
-    getPostsByTag(post.Tags[0], 6),
-  ])
+  const [blocks, rankedPosts, recentPosts, tags, sameTagPosts] =
+    await Promise.all([
+      getAllBlocksByBlockId(post.PageId),
+      getRankedPosts(),
+      getPosts(5),
+      getAllTags(),
+      getPostsByTag(post.Tags[0], 6),
+    ])
 
   const fallback = {}
   fallback[slug] = blocks
@@ -76,7 +71,7 @@ export async function getStaticProps({ params: { slug } }) {
 export async function getStaticPaths() {
   const posts = await getAllPosts()
   return {
-    paths: posts.map(post => getBlogLink(post.Slug)),
+    paths: posts.map((post) => getBlogLink(post.Slug)),
     fallback: 'blocking',
   }
 }
@@ -93,10 +88,14 @@ const fetchBlocks = async (slug: string): Promise<Array<Block>> => {
 const includeExpiredImage = (blocks: Array<Block>): boolean => {
   const now = Date.now()
 
-  return blocks.some(block => {
+  return blocks.some((block) => {
     if (block.Type === 'image') {
       const image = block.Image
-      if (image.File && image.File.ExpiryTime && Date.parse(image.File.ExpiryTime) < now) {
+      if (
+        image.File &&
+        image.File.ExpiryTime &&
+        Date.parse(image.File.ExpiryTime) < now
+      ) {
         return true
       }
     }
@@ -114,7 +113,11 @@ const RenderPost = ({
   tags = [],
   fallback,
 }) => {
-  const { data: blocks, error } = useSWR(includeExpiredImage(fallback[slug]) && slug, fetchBlocks, { fallbackData: fallback[slug] })
+  const { data: blocks, error } = useSWR(
+    includeExpiredImage(fallback[slug]) && slug,
+    fetchBlocks,
+    { fallbackData: fallback[slug] }
+  )
 
   if (error || !blocks) {
     return <PostsNotFound />

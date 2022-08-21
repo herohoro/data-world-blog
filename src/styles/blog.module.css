@@ -21,7 +21,7 @@
   text-align: center;
 }
 .mainContent footer {
-  border-top: 1px dashed #888;
+  border-top: 1px dashed #555;
   margin: 0 auto;
   padding: 40px 0 0;
 }
@@ -42,6 +42,9 @@
 
 .post {
   margin: 0 auto 40px;
+  /* border: 1px solid var(--accents-2); */
+  background-color: rgba(85, 85, 85, 0.181);
+  padding: 20px;
 }
 .post :global(h3) {
   margin: 0;
@@ -50,35 +53,36 @@
 .post :global(h4) {
   margin: 1.8rem 0 0.8rem;
   color: var(--fg);
-  font-size: 1.1rem;
+  font-size: 1.5rem;
 }
-.post :global(h4):after {
+.post :global(h4):before {
   color: var(--accents-1);
-  font-size: 0.9rem;
-  content: '▼';
-  padding-left: 0.2rem;
+  font-size: 1.5rem;
+  content: '#';
+  padding-right: 0.2rem;
 }
 .post :global(h5) {
   margin: 1.8rem 0 0.8rem;
   color: var(--fg);
-  font-size: 1.1rem;
+  font-size: 1.3rem;
 }
-.post :global(h5):after {
+.post :global(h5):before {
   color: var(--accents-1);
-  font-size: 0.9rem;
-  content: '▼';
-  padding-left: 0.2rem;
+  font-size: 1.3rem;
+  content: '##';
+  padding-right: 0.2rem;
 }
 .post :global(h6) {
   margin: 1.8rem 0 0.8rem;
   color: var(--fg);
   font-size: 1.1rem;
 }
-.post :global(h6):after {
+
+.post :global(h6):before {
   color: var(--accents-1);
-  font-size: 0.9rem;
-  content: '▼';
-  padding-left: 0.2rem;
+  font-size: 1.2rem;
+  content: '###';
+  padding-right: 0.2rem;
 }
 .post :global(p) {
   margin: 0.3rem 0;

@@ -15,7 +15,9 @@
 .image > div:first-child {
   text-align: center;
 }
-
+.equation {
+  overflow-x: scroll;
+}
 .code {
   display: block;
   width: 100%;
@@ -26,7 +28,7 @@
   overflow: auto;
   margin: 5px;
   padding: 0.8rem;
-  background: rgb(247, 246, 243);
+  background: #1a2638;
   font-size: 0.9rem;
   line-height: 1.2rem;
   border-radius: var(--radius);
@@ -34,61 +36,97 @@
 .code pre code {
   color: var(--fg);
   padding: 0;
-  background: rgb(247, 246, 243) !important;
+  background: #1a2638;
 }
 .gray {
-  color: rgba(120, 119, 116, 1);
+  color: rgb(166, 165, 161);
+  text-shadow: #555 1px 0 1px;
 }
 .brown {
-  color: rgba(159, 107, 83, 1);
+  color: rgb(191, 126, 97);
+  text-shadow: #555 1px 0 1px;
 }
 .orange {
-  color: rgba(217, 115, 13, 1);
+  color: rgb(251, 132, 13);
+  text-shadow: #555 1px 0 1px;
 }
 .yellow {
-  color: rgba(203, 145, 47, 1);
+  color: rgb(246, 177, 56);
+  text-shadow: #555 1px 0 1px;
 }
 .green {
-  color: rgba(68, 131, 97, 1);
+  color: rgb(116, 227, 168);
+  text-shadow: #555 1px 0 1px;
 }
 .blue {
-  color: rgba(51, 126, 169, 1);
+  color: rgb(68, 173, 234);
+  text-shadow: #555 1px 0 1px;
 }
 .purple {
-  color: rgba(144, 101, 176, 1);
+  color: rgb(187, 129, 231);
+  text-shadow: #555 1px 0 1px;
 }
 .pink {
-  color: rgba(193, 76, 138, 1);
+  color: rgb(246, 133, 197);
+  text-shadow: #555 1px 0 1px;
 }
 .red {
-  color: rgba(212, 76, 71, 1);
+  color: rgb(250, 33, 26);
+  text-shadow: #555 1px 0 1px;
 }
 .grayBackground {
-  background: rgba(241, 241, 239, 1) !important;
+  background: rgb(166, 165, 161) !important;
+  text-shadow: #fff 1px 0 5px;
+  padding: 0 10px;
+  color: #111;
 }
 .brownBackground {
-  background: rgba(244, 238, 238, 1) !important;
+  background: rgb(191, 127, 97) !important;
+  text-shadow: #fff 1px 0 5px;
+  padding: 0 10px;
+  color: #111;
 }
 .orangeBackground {
-  background: rgba(251, 236, 221, 1) !important;
+  background: rgb(251, 132, 13) !important;
+  text-shadow: #fff 1px 0 5px;
+  color: #111;
+  padding: 0 10px;
 }
 .yellowBackground {
-  background: rgba(251, 243, 219, 1) !important;
+  background: rgb(246, 177, 56) !important;
+  text-shadow: #fff 1px 0 5px;
+  color: #111;
+  padding: 0 10px;
 }
 .greenBackground {
-  background: rgba(237, 243, 236, 1) !important;
+  background: rgb(116, 227, 168) !important;
+  text-shadow: #fff 1px 0 5px;
+  color: #111;
+  padding: 0 10px;
 }
 .blueBackground {
-  background: rgba(231, 243, 248, 1) !important;
+  background: rgb(68, 173, 234) !important;
+  text-shadow: #fff 1px 0 5px;
+  color: #111;
+  padding: 0 10px;
 }
 .purpleBackground {
-  background: rgba(244, 240, 247, 0.8) !important;
+  background: rgb(187, 129, 231) !important;
+  text-shadow: #fff 1px 0 5px;
+  color: #111;
+  padding: 0 10px;
 }
 .pinkBackground {
-  background: rgba(249, 238, 243, 0.8) !important;
+  background: rgb(246, 133, 197) !important;
+  text-shadow: #fff 1px 0 5px;
+  color: #111;
+  padding: 0 10px;
 }
 .redBackground {
-  background: rgba(253, 235, 236, 1) !important;
+  background: rgb(251, 68, 62) !important;
+  text-shadow: #fff 1px 0 5px;
+  color: #111;
+  padding: 0 10px;
 }
 
 .callout {
@@ -102,7 +140,7 @@
   border-width: 1px;
   border-style: solid;
   border-color: transparent;
-  background: rgba(235, 236, 237, 0.6);
+  background: rgba(110, 110, 110, 0.6);
   white-space: pre-wrap;
 }
 .callout div {
@@ -113,8 +151,9 @@
   margin-right: 0.7rem;
 }
 .table {
-  overflow-x: auto;
+  overflow-x: scroll;
 }
+
 .table th,
 .table td {
   white-space: nowrap;
@@ -157,7 +196,7 @@
 .bookmark > a > div:first-child > div:nth-child(2) {
   font-size: 12px;
   line-height: 16px;
-  opacity: .8;
+  opacity: 0.8;
   height: 32px;
   overflow: hidden;
 }
