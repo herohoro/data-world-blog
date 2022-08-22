@@ -148,13 +148,25 @@ exports[`RenderPostsBeforeDate renders the page unchanged 1`] = `
       </div>
       <footer>
         <div
-          class="nextPageLink"
+          class="nextContainer"
         >
-          <a
-            href="/blog/before/2021-11-01"
+          <div
+            class="buttonSubContainer"
           >
-            Next page ＞
-          </a>
+            <a
+              class="backButton"
+            >
+               
+              ＜ New
+               
+            </a>
+            <a
+              class="nextPageLink"
+              href="/blog/before/2021-11-01"
+            >
+              Old ＞
+            </a>
+          </div>
         </div>
       </footer>
     </div>

@@ -147,7 +147,7 @@ exports[`RenderPosts renders the page unchanged 1`] = `
           <a
             href="/blog/before/2021-11-01"
           >
-            Next page ＞
+            Find more articles ＞
           </a>
         </div>
       </footer>
@@ -155,6 +155,33 @@ exports[`RenderPosts renders the page unchanged 1`] = `
     <div
       class="subContent"
     >
+      <div
+        class="twitterTimeline"
+      >
+        <h3>
+          Twitter
+        </h3>
+        <hr />
+        <p>
+          \\ Follow me /
+        </p>
+        <a
+          class="twitter-timeline"
+          data-chrome="nofooter,transparent,noheader"
+          data-height="500"
+          data-lang="en"
+          data-theme="dark"
+          data-width="500"
+          href="https://twitter.com/mineral_30?ref_src=twsrc%5Etfw"
+        >
+          Tweets by mineral_30
+        </a>
+         
+        <script
+          async=""
+          src="https://platform.twitter.com/widgets.js"
+        />
+      </div>
       <div
         class="blogPostLink"
       >
