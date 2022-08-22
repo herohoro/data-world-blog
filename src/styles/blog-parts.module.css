@@ -119,11 +119,9 @@
     width: 50%;
   }
 }
-
-.noContents {
-}
-
-.blogPostLink {
+.blogPostLink,
+.blogTagLink {
+  margin-top: 30px;
 }
 .blogPostLink h3 {
   margin: 0;
@@ -131,8 +129,9 @@
 }
 .blogPostLink ul {
   list-style-type: none;
-  padding: 0;
+  padding: 0 10px;
   margin-top: 0.3rem;
+  box-shadow: 5px 5px 10px rgba(192, 192, 192, 0.367);
 }
 .blogPostLink ul li {
   position: relative;
@@ -150,7 +149,7 @@
   left: 0;
   top: 0.9rem;
   content: '';
-  background: #333;
+  background: var(--accents-4);
 }
 
 .blogTagLink {
@@ -161,8 +160,9 @@
 }
 .blogTagLink ul {
   list-style-type: none;
-  padding: 0;
+  padding: 0 10px;
   margin-top: 0.3rem;
+  box-shadow: 5px 5px 10px rgba(192, 192, 192, 0.367);
 }
 .blogTagLink ul li {
   position: relative;
@@ -180,10 +180,12 @@
   left: 0;
   top: 0.9rem;
   content: '';
-  background: #333;
+  background: var(--accents-4);
 }
 
 .postsNotFound {
+  margin-top: 10rem;
+  color: var(--accents-3);
 }
 
 @media (max-width: 600px) {

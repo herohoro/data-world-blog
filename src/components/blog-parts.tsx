@@ -149,6 +149,30 @@ export const NoContents = ({ contents }) => {
   return <div className={styles.noContents}>There are no contents yet</div>
 }
 
+export const TwitterTimeline = () => (
+  <div className={styles.twitterTimeline}>
+    <h3>Twitter</h3>
+    <hr />
+    <p>&#92; Follow me &#47;</p>
+    <a
+      className="twitter-timeline"
+      data-lang="en"
+      data-chrome="nofooter,transparent,noheader"
+      data-width="500"
+      data-height="500"
+      data-theme="dark"
+      href="https://twitter.com/mineral_30?ref_src=twsrc%5Etfw"
+    >
+      Tweets by mineral_30
+    </a>{' '}
+    <script
+      async
+      src="https://platform.twitter.com/widgets.js"
+      // charset="utf-8"
+    ></script>
+  </div>
+)
+
 export const BlogPostLink = ({ heading, posts }) => (
   <div className={styles.blogPostLink}>
     <h3>{heading}</h3>

@@ -38,7 +38,9 @@ const RenderPage = () => (
         This blog is about solving those questions together. When you read an
         article, you may want to comment on it, right?
         <br />
-        If you do, I would be happy if you tweet me on Twitter.
+        If you do, I would be happy if you tweet{' '}
+        <ExtLink href="https://mobile.twitter.com/mineral_30">me</ExtLink> on
+        Twitter.
       </p>
       <br />
       <br />

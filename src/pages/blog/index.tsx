@@ -9,6 +9,7 @@ import {
   PostTags,
   PostTitle,
   ReadMoreLink,
+  TwitterTimeline,
 } from '../../components/blog-parts'
 import styles from '../../styles/blog.module.css'
 import {
@@ -50,7 +51,7 @@ const RenderPosts = ({
       <div className={styles.mainContent}>
         <NoContents contents={posts} />
 
-        {posts.map(post => {
+        {posts.map((post) => {
           return (
             <div className={styles.post} key={post.Slug}>
               <PostDate post={post} />
@@ -68,6 +69,7 @@ const RenderPosts = ({
       </div>
 
       <div className={styles.subContent}>
+        <TwitterTimeline />
         <BlogPostLink heading="Recommended" posts={rankedPosts} />
         <BlogTagLink heading="Categories" tags={tags} />
       </div>
