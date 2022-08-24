@@ -162,9 +162,6 @@ exports[`RenderPosts renders the page unchanged 1`] = `
           Twitter
         </h3>
         <hr />
-        <p>
-          \\ Follow me /
-        </p>
         <a
           class="twitter-timeline"
           data-chrome="nofooter,transparent,noheader"
@@ -174,7 +171,7 @@ exports[`RenderPosts renders the page unchanged 1`] = `
           data-width="500"
           href="https://twitter.com/mineral_30?ref_src=twsrc%5Etfw"
         >
-          Tweets by mineral_30
+          Tweets by mineral_30 \\ Follow me /
         </a>
          
         <script
