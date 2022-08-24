@@ -153,7 +153,6 @@ export const TwitterTimeline = () => (
   <div className={styles.twitterTimeline}>
     <h3>Twitter</h3>
     <hr />
-    <p>&#92; Follow me &#47;</p>
     <a
       className="twitter-timeline"
       data-lang="en"
@@ -163,7 +162,7 @@ export const TwitterTimeline = () => (
       data-theme="dark"
       href="https://twitter.com/mineral_30?ref_src=twsrc%5Etfw"
     >
-      Tweets by mineral_30
+      Tweets by mineral_30 &#92; Follow me &#47;
     </a>{' '}
     <script
       async

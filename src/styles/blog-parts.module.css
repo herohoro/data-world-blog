@@ -122,6 +122,8 @@
 .blogPostLink,
 .blogTagLink {
   margin-top: 30px;
+  box-shadow: 5px 5px 10px rgba(192, 192, 192, 0.367);
+  padding: 20px;
 }
 .blogPostLink h3 {
   margin: 0;
@@ -131,7 +133,6 @@
   list-style-type: none;
   padding: 0 10px;
   margin-top: 0.3rem;
-  box-shadow: 5px 5px 10px rgba(192, 192, 192, 0.367);
 }
 .blogPostLink ul li {
   position: relative;
@@ -162,7 +163,6 @@
   list-style-type: none;
   padding: 0 10px;
   margin-top: 0.3rem;
-  box-shadow: 5px 5px 10px rgba(192, 192, 192, 0.367);
 }
 .blogTagLink ul li {
   position: relative;
