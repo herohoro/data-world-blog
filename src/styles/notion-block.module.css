@@ -43,7 +43,7 @@
   text-shadow: #555 1px 0 1px;
 }
 .brown {
-  color: rgb(191, 126, 97);
+  color: rgb(239, 102, 39);
   text-shadow: #555 1px 0 1px;
 }
 .orange {
@@ -75,57 +75,39 @@
   text-shadow: #555 1px 0 1px;
 }
 .grayBackground {
-  background: rgb(166, 165, 161) !important;
-  text-shadow: #fff 1px 0 5px;
+  background: rgba(166, 165, 161, 0.339) !important;
   padding: 0 10px;
-  color: #111;
 }
 .brownBackground {
-  background: rgb(191, 127, 97) !important;
-  text-shadow: #fff 1px 0 5px;
+  background: rgba(187, 139, 41, 0.341) !important;
   padding: 0 10px;
-  color: #111;
 }
 .orangeBackground {
-  background: rgb(251, 132, 13) !important;
-  text-shadow: #fff 1px 0 5px;
-  color: #111;
+  background: rgba(251, 134, 0, 0.303) !important;
   padding: 0 10px;
 }
 .yellowBackground {
-  background: rgb(246, 177, 56) !important;
-  text-shadow: #fff 1px 0 5px;
-  color: #111;
+  background: rgba(246, 176, 56, 0.506) !important;
   padding: 0 10px;
 }
 .greenBackground {
-  background: rgb(116, 227, 168) !important;
-  text-shadow: #fff 1px 0 5px;
-  color: #111;
+  background: rgba(116, 227, 168, 0.37) !important;
   padding: 0 10px;
 }
 .blueBackground {
-  background: rgb(68, 173, 234) !important;
-  text-shadow: #fff 1px 0 5px;
-  color: #111;
+  background: rgba(68, 173, 234, 0.511) !important;
   padding: 0 10px;
 }
 .purpleBackground {
-  background: rgb(187, 129, 231) !important;
-  text-shadow: #fff 1px 0 5px;
-  color: #111;
+  background: rgba(187, 129, 231, 0.631) !important;
   padding: 0 10px;
 }
 .pinkBackground {
-  background: rgb(246, 133, 197) !important;
-  text-shadow: #fff 1px 0 5px;
-  color: #111;
+  background: rgba(251, 117, 193, 0.721) !important;
   padding: 0 10px;
 }
 .redBackground {
-  background: rgb(251, 68, 62) !important;
-  text-shadow: #fff 1px 0 5px;
-  color: #111;
+  background: rgba(255, 94, 88, 0.669) !important;
   padding: 0 10px;
 }
 
