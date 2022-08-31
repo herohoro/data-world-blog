@@ -20,6 +20,8 @@ import {
   Table,
   TableRow,
   TableCell,
+  ColumnList,
+  Column,
   RichText,
   Text,
   Annotation,
@@ -237,7 +239,9 @@ export async function getPostBySlug(slug: string) {
   return _buildPost(data.results[0])
 }
 
-export async function getPostsByTag(tag: string, pageSize = 100) {
+export async function getPostsByTag(tag: string | undefined, pageSize = 100) {
+  if (!tag) return []
+
   if (blogIndexCache.exists()) {
     const allPosts = await getAllPosts()
     return allPosts.filter(post => post.Tags.includes(tag)).slice(0, pageSize)
@@ -514,20 +518,12 @@ export async function getAllBlocksByBlockId(blockId: string) {
 
           block.Table = table
           break
-        case 'table_row':
-          const cells: TableCell[] = item.table_row.cells.map(cell => {
-            const tableCell: TableCell = {
-              RichTexts: cell.map(_buildRichText),
-            }
-
-            return tableCell
-          })
-
-          const tableRow: TableRow = {
-            Cells: cells,
+        case 'column_list':
+          const columnList: ColumnList = {
+            Columns: [],
           }
 
-          block.TableRow = tableRow
+          block.ColumnList = columnList
           break
       }
 
@@ -547,8 +543,9 @@ export async function getAllBlocksByBlockId(blockId: string) {
     const block = allBlocks[i]
 
     if (block.Type === 'table') {
-      // Fetch table_row
-      block.Table.Rows = await getAllBlocksByBlockId(block.Id)
+      block.Table.Rows = await _getTableRows(block.Id)
+    } else if (block.Type === 'column_list') {
+      block.ColumnList.Columns = await _getColumns(block.Id)
     } else if (block.Type === 'bulleted_list_item' && block.HasChildren) {
       block.BulletedListItem.Children = await getAllBlocksByBlockId(block.Id)
     } else if (block.Type === 'numbered_list_item' && block.HasChildren) {
@@ -557,6 +554,86 @@ export async function getAllBlocksByBlockId(blockId: string) {
   }
 
   return allBlocks
+}
+
+async function _getTableRows(blockId: string): Promise<TableRow[]> {
+  let tableRows: TableRow[] = []
+
+  const params = {
+    block_id: blockId,
+  }
+
+  while (true) {
+    const data = await client.blocks.children.list(params)
+
+    const blocks = data.results.map(item => {
+      const tableRow: TableRow = {
+        Id: item.id,
+        Type: item.type,
+        HasChildren: item.has_children,
+        Cells: []
+      }
+
+      if (item.type === 'table_row') {
+        const cells: TableCell[] = item.table_row.cells.map(cell => {
+          const tableCell: TableCell = {
+            RichTexts: cell.map(_buildRichText),
+          }
+
+          return tableCell
+        })
+
+        tableRow.Cells = cells
+      }
+
+      return tableRow
+    })
+
+    tableRows = tableRows.concat(blocks)
+
+    if (!data.has_more) {
+      break
+    }
+
+    params['start_cursor'] = data.next_cursor
+  }
+
+  return tableRows
+}
+
+async function _getColumns(blockId: string): Promise<Column[]> {
+  let columns: Column[] = []
+
+  const params = {
+    block_id: blockId,
+  }
+
+  while (true) {
+    const data = await client.blocks.children.list(params)
+
+    const blocks = await Promise.all(data.results.map(async item => {
+      const children = await getAllBlocksByBlockId(item.id)
+
+      const column: Column = {
+        Id: item.id,
+        Type: item.type,
+        HasChildren: item.has_children,
+        Children: children,
+      }
+
+      return column
+    }))
+
+    columns = columns.concat(blocks)
+
+    if (!data.has_more) {
+      break
+    }
+
+    params['start_cursor'] = data.next_cursor
+  }
+
+  return columns
 }
 
 export async function getAllTags() {
