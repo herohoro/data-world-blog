@@ -27,7 +27,7 @@ export const ShareUrl = ({ post }) => {
       <hr />
       <p>
         Would you like to speak the sentences in this article with correct
-        pronunciation?
+        pronunciation while comparing them with Japanese?
         <br />
         We have embedded audio data from a site that reads aloud slowly into
         Notion. <br />
