@@ -18,6 +18,31 @@ export const PostDate = ({ post }) => (
   </div>
 )
 
+export const ShareUrl = ({ post }) => {
+  const postShareUrl = post.ShareUrl ? post.ShareUrl : ''
+  if (postShareUrl.length === 0) return null
+
+  return (
+    <>
+      <hr />
+      <p>
+        Would you like to speak the sentences in this article with correct
+        pronunciation?
+        <br />
+        We have embedded audio data from a site that reads aloud slowly into
+        Notion. <br />
+        If you go to the following link, you can practice by playing the audio
+        data while looking at the text of the article.
+        <br />
+        &#x1F53D;
+      </p>
+      <a>{postShareUrl}</a>
+      <br />
+      <br />
+    </>
+  )
+}
+
 export const PostTitle = ({ post, enableLink = true }) => {
   const postTitle = post.Title ? post.Title : ''
 

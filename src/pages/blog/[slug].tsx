@@ -15,6 +15,7 @@ import {
   PostTags,
   PostTitle,
   PostsNotFound,
+  ShareUrl,
 } from '../../components/blog-parts'
 import SocialButtons from '../../components/social-buttons'
 import styles from '../../styles/blog.module.css'
@@ -139,6 +140,8 @@ const RenderPost = ({
 
           <NoContents contents={blocks} />
           <PostBody blocks={blocks} />
+
+          <ShareUrl post={post} />
 
           <footer>
             {NEXT_PUBLIC_URL && (
