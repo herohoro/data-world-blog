@@ -36,7 +36,7 @@ export const ShareUrl = ({ post }) => {
         <br />
         &#x1F53D;
       </p>
-      <a>{postShareUrl}</a>
+      <a href={postShareUrl}>{postShareUrl}</a>
       <br />
       <br />
     </>
