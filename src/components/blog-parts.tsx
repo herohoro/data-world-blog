@@ -25,10 +25,13 @@ export const ShareUrl = ({ post }) => {
   return (
     <>
       <hr />
-      <p>
+      <h4>
         Would you like to speak the sentences in this article with correct
         pronunciation while comparing them with Japanese?
-        <br />
+      </h4>
+      <br />
+      <br />
+      <p>
         We have embedded audio data from a site that reads aloud slowly into
         Notion. <br />
         If you go to the following link, you can practice by playing the audio
