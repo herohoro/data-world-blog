@@ -122,6 +122,12 @@ export interface SyncedFrom {
   BlockId: string
 }
 
+export interface Toggle {
+  RichTexts: RichText[]
+  Color: string
+  Children: Block[]
+}
+
 export interface Embed {
   Url: string
 }
