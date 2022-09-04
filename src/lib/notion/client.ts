@@ -400,8 +400,6 @@ export async function getAllBlocksByBlockId(blockId: string) {
       block.NumberedListItem.Children = await getAllBlocksByBlockId(block.Id)
     } else if (block.Type === 'synced_block') {
       block.SyncedBlock.Children = await _getSyncedBlockChildren(block)
-    } else if (block.Type === 'toggle') {
-      block.Toggle.Children = await getAllBlocksByBlockId(block.Id)
     }
   }
 
@@ -468,7 +466,6 @@ function _buildBlock(item) {
       const video: Video = {
         Type: item.video.type,
       }
-
       if (item.video.type === 'external') {
         video.External = { Url: item.video.external.url }
       }
@@ -480,7 +477,6 @@ function _buildBlock(item) {
         Caption: item.image.caption.map(_buildRichText),
         Type: item.image.type,
       }
-
       if (item.image.type === 'external') {
         image.External = { Url: item.image.external.url }
       } else {
@@ -489,7 +485,6 @@ function _buildBlock(item) {
           ExpiryTime: item.image.file.expiry_time,
         }
       }
-
       block.Image = image
       break
     case 'code':
@@ -498,7 +493,6 @@ function _buildBlock(item) {
         Text: item[item.type].rich_text.map(_buildRichText),
         Language: item.code.language,
       }
-
       block.Code = code
       break
     case 'quote':
@@ -506,7 +500,6 @@ function _buildBlock(item) {
         Text: item[item.type].rich_text.map(_buildRichText),
         Color: item[item.type].color,
       }
-
       block.Quote = quote
       break
     case 'equation':
@@ -524,9 +517,9 @@ function _buildBlock(item) {
         },
         Color: item[item.type].color,
       }
-
       block.Callout = callout
       break
+
     case 'synced_block':
       let syncedFrom: SyncedFrom = null
       if (item[item.type].synced_from && item[item.type].synced_from.block_id) {
@@ -541,15 +534,7 @@ function _buildBlock(item) {
 
       block.SyncedBlock = syncedBlock
       break
-    case 'toggle':
-      const toggle: Toggle = {
-        RichTexts: item[item.type].rich_text.map(_buildRichText),
-        Color: item[item.type].color,
-        Children: [],
-      }
 
-      block.Toggle = toggle
-      break
     case 'embed':
       const embed: Embed = {
         Url: item.embed.url,
@@ -561,14 +546,12 @@ function _buildBlock(item) {
       const bookmark: Bookmark = {
         Url: item.bookmark.url,
       }
-
       block.Bookmark = bookmark
       break
     case 'link_preview':
       const linkPreview: LinkPreview = {
         Url: item.link_preview.url,
       }
-
       block.LinkPreview = linkPreview
       break
     case 'table':
