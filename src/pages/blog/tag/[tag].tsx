@@ -62,7 +62,7 @@ export async function getStaticPaths() {
   const tags = await getAllTags()
 
   return {
-    paths: tags.map(tag => getTagLink(tag)),
+    paths: tags.map((tag) => getTagLink(tag)),
     fallback: 'blocking',
   }
 }
@@ -99,7 +99,7 @@ const RenderPostsByTags = ({
 
         <NoContents contents={posts} />
 
-        {posts.map(post => {
+        {posts.map((post) => {
           return (
             <div className={styles.post} key={post.Slug}>
               <PostDate post={post} />
