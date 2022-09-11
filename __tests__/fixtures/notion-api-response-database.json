@@ -7,6 +7,12 @@
   "last_edited_time": "2022-02-05T07:00:00.000Z",
   "title": [],
   "properties": {
+    "ShareUrl": {
+      "id": "U_M~",
+      "name": "ShareUrl",
+      "type": "url",
+      "url": {}
+    },
     "Published": {
       "id": "%5Cm%3Dn",
       "name": "Published",
