@@ -1,5 +1,4 @@
 import DocumentHead from '../components/document-head'
-import ExtLink from '../components/ext-link'
 import styles from '../styles/page.module.css'
 import { INDEX_PAGE_ID } from '../lib/notion/server-constants'
 import NotionBlocks from '../components/notion-block'
