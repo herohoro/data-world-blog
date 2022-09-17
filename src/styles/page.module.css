@@ -5,7 +5,7 @@
 }
 
 .container > div {
-  margin-bottom: 40px;
+  margin-top: 40px;
 }
 .container div:last-child {
   margin-bottom: 0;
@@ -20,4 +20,7 @@
 .container p {
   margin: 0.3rem auto;
   line-height: 2rem;
+  white-space: pre-wrap;
+  font-size: 1rem;
+  min-height: 1.8rem;
 }
