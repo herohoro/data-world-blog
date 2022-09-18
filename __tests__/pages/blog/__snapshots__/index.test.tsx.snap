@@ -164,7 +164,7 @@ exports[`RenderPosts renders the page unchanged 1`] = `
         <hr />
         <a
           class="twitter-timeline"
-          data-chrome="nofooter,transparent,noheader"
+          data-chrome="nofooter,transparent,noheader,noborders"
           data-height="500"
           data-lang="en"
           data-theme="dark"
