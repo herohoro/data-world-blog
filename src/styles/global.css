@@ -32,12 +32,10 @@ body {
   padding: 0;
   margin: 0;
   font-size: 16px;
+  height: 100%;
 }
 
 body {
-  min-height: 100vh;
-  /* background: var(--bg); */
-  background: linear-gradient(-135deg, #621075, #040d21);
   color: var(--fg);
   font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, Segoe UI,
     Hiragino Kaku Gothic ProN, Hiragino Sans, ヒラギノ角ゴ ProN W3, Arial,
@@ -46,16 +44,46 @@ body {
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   */
 
-  /*background-image: radial-gradient(#ddd 1px, transparent 1px),
-    radial-gradient(#ddd 1px, transparent 1px);*/
-  background-position: 0 0, 25px 25px;
-  background-attachment: fixed;
-  /* background-size: 50px 50px; */
-
   /* Hack */
   overflow-x: hidden;
 
   -webkit-font-smoothing: antialiased;
+}
+body:after {
+  /*擬似要素をつくる*/
+  position: fixed; /*固定配置*/
+  top: 0;
+  left: 0; /*左上に固定*/
+  width: 100%;
+  height: 100%; /*画面全体を覆う*/
+  content: '';
+  z-index: -1; /*背景にするため*/
+  background: #040d21; /*保険用*/
+  background: -moz-linear-gradient(
+    -135deg,
+    /* bottom, */ #ecdf30 0%,
+    #f66262 20%,
+    #621075 50%,
+    #2c1289 60%,
+    /* #674e08 70%, */ #040d21 100%
+  ); /*古いFireFox向け*/
+  background: -webkit-linear-gradient(
+    -135deg,
+    /* bottom, */ #ecdf30 0%,
+    #f66262 20%,
+    #621075 50%,
+    #2c1289 60%,
+    /* #674e08 70%, */ #040d21 100%
+  ); /*古いSafari・Chrome向け*/
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ecdf30', endColorstr='#040d21',GradientType=0 ); /*IE9以下への対応*/
+  background: linear-gradient(
+    -135deg,
+    /* bottom, */ #ecdf30 0%,
+    #f66262 20%,
+    #621075 50%,
+    #2c1289 60%,
+    /* #674e08 70%, */ #040d21 100%
+  ); /*正規のプロパティ*/
 }
 
 figure {
