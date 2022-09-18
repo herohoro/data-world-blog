@@ -185,7 +185,7 @@ export const TwitterTimeline = () => (
       className="twitter-timeline"
       data-lang="en"
       data-chrome="nofooter,transparent,noheader"
-      data-width="500"
+      data-width="100%"
       data-height="500"
       data-theme="dark"
       href="https://twitter.com/mineral_30?ref_src=twsrc%5Etfw"
