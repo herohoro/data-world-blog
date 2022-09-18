@@ -10,6 +10,7 @@
 
 .mainContent {
   width: 75%;
+  margin-right: 20px;
 }
 @media (max-width: 600px) {
   .mainContent {
@@ -32,7 +33,7 @@
 }
 
 .subContent {
-  width: 23%;
+  width: 30%;
 }
 @media (max-width: 600px) {
   .subContent {
