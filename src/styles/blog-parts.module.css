@@ -120,7 +120,8 @@
   }
 }
 .blogPostLink,
-.blogTagLink {
+.blogTagLink,
+.twitterTimeline {
   margin-top: 30px;
   box-shadow: 5px 5px 10px rgba(192, 192, 192, 0.367);
   padding: 20px;

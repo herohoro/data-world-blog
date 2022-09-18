@@ -184,7 +184,7 @@ export const TwitterTimeline = () => (
     <a
       className="twitter-timeline"
       data-lang="en"
-      data-chrome="nofooter,transparent,noheader"
+      data-chrome="nofooter,transparent,noheader,noborders"
       data-width="100%"
       data-height="500"
       data-theme="dark"

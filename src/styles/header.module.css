@@ -54,7 +54,7 @@
   padding: 0 15px;
 }
 .header ul li :global(a.active) {
-  background-color: var(--accents-4);
+  background-color: var(--accents-5);
   padding: 10px;
   border-radius: 50%;
   color: var(--fg);
