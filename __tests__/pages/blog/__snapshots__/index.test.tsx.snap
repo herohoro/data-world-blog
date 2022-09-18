@@ -168,7 +168,7 @@ exports[`RenderPosts renders the page unchanged 1`] = `
           data-height="500"
           data-lang="en"
           data-theme="dark"
-          data-width="500"
+          data-width="100%"
           href="https://twitter.com/mineral_30?ref_src=twsrc%5Etfw"
         >
           Tweets by mineral_30 \\ Follow me /
