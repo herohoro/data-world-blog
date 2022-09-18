@@ -130,6 +130,9 @@
 .callout div:first-child {
   margin-right: 0.7rem;
 }
+.callout > div > a {
+  color: #83baf9;
+}
 
 .table {
   overflow-x: scroll;
