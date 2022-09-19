@@ -44,12 +44,18 @@ exports[`RenderPosts renders the page unchanged 1`] = `
         <div
           class="readMoreLink"
         >
-          <a
-            class="readMore"
-            href="/blog/ihatov"
+          <div
+            class="box"
           >
-            Read more
-          </a>
+            <span>
+              <a
+                class="readMore"
+                href="/blog/ihatov"
+              >
+                Read more
+              </a>
+            </span>
+          </div>
         </div>
       </div>
       <div
@@ -88,12 +94,18 @@ exports[`RenderPosts renders the page unchanged 1`] = `
         <div
           class="readMoreLink"
         >
-          <a
-            class="readMore"
-            href="/blog/supported-blocks"
+          <div
+            class="box"
           >
-            Read more
-          </a>
+            <span>
+              <a
+                class="readMore"
+                href="/blog/supported-blocks"
+              >
+                Read more
+              </a>
+            </span>
+          </div>
         </div>
       </div>
       <div
@@ -132,12 +144,18 @@ exports[`RenderPosts renders the page unchanged 1`] = `
         <div
           class="readMoreLink"
         >
-          <a
-            class="readMore"
-            href="/blog/my-first-post"
+          <div
+            class="box"
           >
-            Read more
-          </a>
+            <span>
+              <a
+                class="readMore"
+                href="/blog/my-first-post"
+              >
+                Read more
+              </a>
+            </span>
+          </div>
         </div>
       </div>
       <footer>
