@@ -16,6 +16,7 @@ import {
   PostTitle,
   PostsNotFound,
   ShareUrl,
+  PostPerson,
 } from '../../components/blog-parts'
 import SocialButtons from '../../components/social-buttons'
 import styles from '../../styles/blog.module.css'
@@ -137,6 +138,7 @@ const RenderPost = ({
           <PostDate post={post} />
           <PostTags post={post} />
           <PostTitle post={post} enableLink={false} />
+          <PostPerson post={post} />
 
           <NoContents contents={blocks} />
           <PostBody blocks={blocks} />

@@ -763,6 +763,7 @@ function _buildPost(data) {
       prop.OGImage.files.length > 0 ? prop.OGImage.files[0].file.url : null,
     Rank: prop.Rank.number,
     ShareUrl: prop.ShareUrl.url,
+    Person: prop.Person.people.map((opt) => opt.name),
   }
 
   return post

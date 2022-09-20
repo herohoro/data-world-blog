@@ -8,6 +8,7 @@ export interface Post {
   OGImage: string
   Rank: number
   ShareUrl?: string
+  Person?: string
 }
 
 export interface Block {

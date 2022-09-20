@@ -15,6 +15,7 @@ import {
   PostTitle,
   PostsNotFound,
   ReadMoreLink,
+  PostPerson,
 } from '../../../components/blog-parts'
 import styles from '../../../styles/blog.module.css'
 
@@ -98,6 +99,7 @@ const RenderPostsBeforeDate = ({
               <PostDate post={post} />
               <PostTags post={post} />
               <PostTitle post={post} />
+              <PostPerson post={post} />
               <PostExcerpt post={post} />
               <ReadMoreLink post={post} />
             </div>

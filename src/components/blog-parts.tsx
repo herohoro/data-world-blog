@@ -45,6 +45,16 @@ export const ShareUrl = ({ post }) => {
     </>
   )
 }
+export const PostPerson = ({ post }) => {
+  const postPerson = post.Person ? post.Person : ''
+  if (postPerson.length === 0) return null
+
+  return (
+    <>
+      &#x1f464;<span style={{ padding: '0 0 0 10px' }}>{postPerson}</span>
+    </>
+  )
+}
 
 export const PostTitle = ({ post, enableLink = true }) => {
   const postTitle = post.Title ? post.Title : ''
