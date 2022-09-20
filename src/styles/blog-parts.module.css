@@ -112,12 +112,6 @@
   z-index: 1;
 }
 
-@media (max-width: 600px) {
-  .readMoreLink a {
-    width: 50%;
-  }
-}
-
 /* .nextPageLink {
   color: var(--fg);
 }
