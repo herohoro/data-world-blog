@@ -30,6 +30,12 @@ exports[`RenderPost renders the page unchanged 1`] = `
         >
           あのイーハトーヴォのすきとおった風
         </h3>
+        👤
+        <span
+          style="padding: 0px 0px 0px 10px;"
+        >
+          へろほろ
+        </span>
         <div
           class="postBody"
         >

@@ -40,6 +40,12 @@ exports[`RenderPostsBeforeDate renders the page unchanged 1`] = `
             あのイーハトーヴォのすきとおった風
           </a>
         </h3>
+        👤
+        <span
+          style="padding: 0px 0px 0px 10px;"
+        >
+          へろほろ
+        </span>
         <div
           class="postExcerpt"
         >
@@ -90,6 +96,12 @@ exports[`RenderPostsBeforeDate renders the page unchanged 1`] = `
             Supported blocks
           </a>
         </h3>
+        👤
+        <span
+          style="padding: 0px 0px 0px 10px;"
+        >
+          へろほろ
+        </span>
         <div
           class="postExcerpt"
         >
@@ -140,6 +152,12 @@ exports[`RenderPostsBeforeDate renders the page unchanged 1`] = `
             My 1st post
           </a>
         </h3>
+        👤
+        <span
+          style="padding: 0px 0px 0px 10px;"
+        >
+          へろほろ
+        </span>
         <div
           class="postExcerpt"
         >

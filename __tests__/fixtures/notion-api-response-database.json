@@ -65,6 +65,21 @@
       "type": "rich_text",
       "rich_text": {}
     },
+    "Person": {
+      "id": "pIkw",
+      "name": "Person",
+      "type": "people",
+      "people": [
+        {
+          "object": "user",
+          "id": "148bfa26-a10a-4673-86c7-539868890a5c",
+          "name": "へろほろ",
+          "avatar_url": "https://lh3.googleusercontent.com/a-/AOh14Gi_Pjfvi80nVEHU30TrNYkA3U_Ayj3ce8EUt_dNHQ=s100",
+          "type": "person",
+          "person": {}
+        }
+      ]
+    },
     "Page": {
       "id": "title",
       "name": "Page",
