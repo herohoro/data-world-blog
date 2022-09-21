@@ -31,19 +31,33 @@ const DocumentHead = ({ title = '', description = '', urlOgImage = '' }) => {
       {urlOgImage ? (
         <meta property="og:image" content={urlOgImage} />
       ) : NEXT_PUBLIC_URL ? (
-        <meta
-          property="og:image"
-          content={new URL('/default.png', NEXT_PUBLIC_URL).toString()}
-        />
+        NEXT_PUBLIC_URL + '/terobi' ? (
+          <meta
+            property="og:image"
+            content={new URL('/terobi-default.jpg', NEXT_PUBLIC_URL).toString()}
+          />
+        ) : (
+          <meta
+            property="og:image"
+            content={new URL('/default.png', NEXT_PUBLIC_URL).toString()}
+          />
+        )
       ) : null}
       <meta name="twitter:card" content="summary_large_image" />
       {urlOgImage ? (
         <meta name="twitter:image" content={urlOgImage} />
       ) : NEXT_PUBLIC_URL ? (
-        <meta
-          name="twitter:image"
-          content={new URL('/default.png', NEXT_PUBLIC_URL).toString()}
-        />
+        NEXT_PUBLIC_URL + '/terobi' ? (
+          <meta
+            property="og:image"
+            content={new URL('/terobi-default.jpg', NEXT_PUBLIC_URL).toString()}
+          />
+        ) : (
+          <meta
+            name="twitter:image"
+            content={new URL('/default.png', NEXT_PUBLIC_URL).toString()}
+          />
+        )
       ) : null}
       {NEXT_PUBLIC_URL ? (
         <link
