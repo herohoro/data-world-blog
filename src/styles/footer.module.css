@@ -1,7 +1,8 @@
 .footer {
   margin: 40px 0 10px;
+  padding-bottom: 20px;
   text-align: center;
-  font-size: 0.75rem;
+  font-size: 1.1rem;
 }
 .footer span {
   color: #777;

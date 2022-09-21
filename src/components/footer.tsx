@@ -10,6 +10,7 @@ const Footer = () => (
         easy-notion-blog
       </ExtLink>
     </div>
+    <></>
   </footer>
 )
 
