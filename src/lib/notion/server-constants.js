@@ -10,6 +10,7 @@ const NEXT_PUBLIC_GA_TRACKING_ID = process.env.NEXT_PUBLIC_GA_TRACKING_ID
 const BLOG_INDEX_CACHE = path.resolve('.blog_index_data')
 const NUMBER_OF_POSTS_PER_PAGE = 10
 const INDEX_PAGE_ID = process.env.INDEX_PAGE_ID
+const TEROBI_PAGE_ID = process.env.TEROBI_PAGE_ID
 
 module.exports = {
   NOTION_API_SECRET,
@@ -19,4 +20,5 @@ module.exports = {
   BLOG_INDEX_CACHE,
   NUMBER_OF_POSTS_PER_PAGE,
   INDEX_PAGE_ID,
+  TEROBI_PAGE_ID,
 }

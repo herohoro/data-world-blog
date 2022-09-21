@@ -31,13 +31,22 @@
     margin: 0 auto 40px;
   }
 }
-
+.teroMainContent {
+  width: 75%;
+}
+.teroMainContent > figure > div > img {
+  width: 50vw;
+}
 .subContent {
   width: 30%;
 }
 @media (max-width: 600px) {
-  .subContent {
+  .subContent,
+  .teroMainContent {
     width: 100%;
+  }
+  .teroMainContent > figure > div > img {
+    width: 75vw;
   }
 }
 
