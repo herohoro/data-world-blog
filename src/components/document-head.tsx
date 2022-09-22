@@ -34,7 +34,10 @@ const DocumentHead = ({ title = '', description = '', urlOgImage = '' }) => {
         NEXT_PUBLIC_URL + '/terobi' ? (
           <meta
             property="og:image"
-            content={new URL('/terobi-default.jpg', NEXT_PUBLIC_URL).toString()}
+            content={new URL(
+              '/japanglish-default.jpg',
+              NEXT_PUBLIC_URL
+            ).toString()}
           />
         ) : (
           <meta
@@ -50,7 +53,10 @@ const DocumentHead = ({ title = '', description = '', urlOgImage = '' }) => {
         NEXT_PUBLIC_URL + '/terobi' ? (
           <meta
             property="og:image"
-            content={new URL('/terobi-default.jpg', NEXT_PUBLIC_URL).toString()}
+            content={new URL(
+              '/japanglish-default.jpg',
+              NEXT_PUBLIC_URL
+            ).toString()}
           />
         ) : (
           <meta
