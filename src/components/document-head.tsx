@@ -30,7 +30,7 @@ const DocumentHead = ({ title = '', description = '', urlOgImage = '' }) => {
       {urlOgImage ? (
         <meta property="og:image" content={urlOgImage} />
       ) : NEXT_PUBLIC_URL ? (
-        NEXT_PUBLIC_URL + '/terobi' ? (
+        new URL('/terobi', NEXT_PUBLIC_URL).toString() ? (
           <meta
             property="og:image"
             content={new URL(
@@ -49,7 +49,7 @@ const DocumentHead = ({ title = '', description = '', urlOgImage = '' }) => {
       {urlOgImage ? (
         <meta name="twitter:image" content={urlOgImage} />
       ) : NEXT_PUBLIC_URL ? (
-        NEXT_PUBLIC_URL + '/terobi' ? (
+        new URL('/terobi', NEXT_PUBLIC_URL).toString() ? (
           <meta
             property="og:image"
             content={new URL(
