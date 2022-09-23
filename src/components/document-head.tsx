@@ -38,15 +38,10 @@ const DocumentHead = ({ title = '', description = '', urlOgImage = '' }) => {
               NEXT_PUBLIC_URL
             ).toString()}
           />
-        ) : new URL('/blog', NEXT_PUBLIC_URL).toString() ? (
-          <meta
-            property="og:image"
-            content={new URL('/enb-default.jpg', NEXT_PUBLIC_URL).toString()}
-          />
         ) : (
           <meta
             property="og:image"
-            content={new URL('/default.png', NEXT_PUBLIC_URL).toString()}
+            content={new URL('/DWB-default.png', NEXT_PUBLIC_URL).toString()}
           />
         )
       ) : null}
@@ -62,15 +57,10 @@ const DocumentHead = ({ title = '', description = '', urlOgImage = '' }) => {
               NEXT_PUBLIC_URL
             ).toString()}
           />
-        ) : new URL('/blog', NEXT_PUBLIC_URL).toString() ? (
-          <meta
-            property="og:image"
-            content={new URL('/enb-default.jpg', NEXT_PUBLIC_URL).toString()}
-          />
         ) : (
           <meta
             name="twitter:image"
-            content={new URL('/default.png', NEXT_PUBLIC_URL).toString()}
+            content={new URL('/DWB-default.png', NEXT_PUBLIC_URL).toString()}
           />
         )
       ) : null}
