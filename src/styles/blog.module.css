@@ -15,29 +15,29 @@
 }
 @media (max-width: 600px) {
   .mainContent,
-  .teroMainContent {
+  .worldMainContent {
     width: 100%;
   }
 }
 .mainContent header,
-.teroMainContent header {
+.worldMainContent header {
   padding: 0 0 20px;
   text-align: center;
 }
 .mainContent footer,
-.teroMainContent footer {
+.worldMainContent footer {
   border-top: 1px dashed #555;
   margin: 0 auto;
   padding: 40px 0 0;
 }
 @media (max-width: 600px) {
   .mainContent footer,
-  .teroMainContent footer {
+  .worldMainContent footer {
     margin: 0 auto 40px;
   }
 }
 
-.teroMainContent > figure > div > img {
+.worldMainContent > figure > div > img {
   width: 50vw;
 }
 .subContent {
@@ -47,7 +47,7 @@
   .subContent {
     width: 100%;
   }
-  .teroMainContent > figure > div > img {
+  .worldMainContent > figure > div > img {
     width: 75vw;
   }
 }

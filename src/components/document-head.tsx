@@ -30,13 +30,18 @@ const DocumentHead = ({ title = '', description = '', urlOgImage = '' }) => {
       {urlOgImage ? (
         <meta property="og:image" content={urlOgImage} />
       ) : NEXT_PUBLIC_URL ? (
-        new URL('/terobi', NEXT_PUBLIC_URL).toString() ? (
+        new URL('/world', NEXT_PUBLIC_URL).toString() ? (
           <meta
             property="og:image"
             content={new URL(
               '/japanglish-default.jpg',
               NEXT_PUBLIC_URL
             ).toString()}
+          />
+        ) : new URL('/blog', NEXT_PUBLIC_URL).toString() ? (
+          <meta
+            property="og:image"
+            content={new URL('/enb-default.jpg', NEXT_PUBLIC_URL).toString()}
           />
         ) : (
           <meta
@@ -49,13 +54,18 @@ const DocumentHead = ({ title = '', description = '', urlOgImage = '' }) => {
       {urlOgImage ? (
         <meta name="twitter:image" content={urlOgImage} />
       ) : NEXT_PUBLIC_URL ? (
-        new URL('/terobi', NEXT_PUBLIC_URL).toString() ? (
+        new URL('/world', NEXT_PUBLIC_URL).toString() ? (
           <meta
             property="og:image"
             content={new URL(
               '/japanglish-default.jpg',
               NEXT_PUBLIC_URL
             ).toString()}
+          />
+        ) : new URL('/blog', NEXT_PUBLIC_URL).toString() ? (
+          <meta
+            property="og:image"
+            content={new URL('/enb-default.jpg', NEXT_PUBLIC_URL).toString()}
           />
         ) : (
           <meta

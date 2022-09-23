@@ -14,11 +14,11 @@ export async function getStaticProps() {
   }
 }
 
-const RenderTerobi = ({ blocks }) => (
+const RenderWorld = ({ blocks }) => (
   <div className={styles.container}>
     <DocumentHead />
 
-    <div className={styles.teroMainContent}>
+    <div className={styles.worldMainContent}>
       <NotionBlocks blocks={blocks} />
     </div>
     <div className={styles.subContent}>
@@ -70,4 +70,4 @@ const RenderTerobi = ({ blocks }) => (
   </div>
 )
 
-export default RenderTerobi
+export default RenderWorld
