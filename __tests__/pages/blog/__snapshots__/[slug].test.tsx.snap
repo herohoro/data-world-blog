@@ -12,6 +12,15 @@ exports[`RenderPost renders the page unchanged 1`] = `
         class="post"
       >
         <div
+          class="blue"
+        >
+          <span
+            class="postCategory"
+          >
+            Learning
+          </span>
+        </div>
+        <div
           class="postDate"
         >
           2021-11-06
