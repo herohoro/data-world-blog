@@ -206,3 +206,36 @@ table th {
   padding: 0.5rem 1rem;
   line-height: 1.2rem;
 }
+.default {
+  color: rgb(138, 136, 136);
+}
+.default > p {
+  color: snow;
+}
+.gray {
+  color: lightgrey;
+}
+.brown {
+  color: rgba(255, 189, 96, 0.987);
+}
+.orange {
+  color: rgb(255, 123, 0);
+}
+.yellow {
+  color: rgb(242, 255, 0);
+}
+.green {
+  color: #06ff83fe;
+}
+.blue {
+  color: rgb(0, 195, 255);
+}
+.purple {
+  color: #b05cff;
+}
+.pink {
+  color: #fb39fb;
+}
+.red {
+  color: #ff4a4a;
+}
