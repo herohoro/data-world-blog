@@ -764,6 +764,8 @@ function _buildPost(data) {
     Rank: prop.Rank.number,
     ShareUrl: prop.ShareUrl.url,
     Person: prop.Person.people.map((opt) => opt.name),
+    Category: prop.Category.select.name,
+    CategoryColor: prop.Category.select.color,
   }
 
   return post

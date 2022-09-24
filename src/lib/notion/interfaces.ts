@@ -9,6 +9,8 @@ export interface Post {
   Rank: number
   ShareUrl?: string
   Person?: string
+  Category?: string
+  CategoryColor?: string
 }
 
 export interface Block {
