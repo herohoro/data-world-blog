@@ -13,6 +13,7 @@ import {
   PostBody,
   PostDate,
   PostTags,
+  PostCategory,
   PostTitle,
   PostsNotFound,
   ShareUrl,
@@ -135,6 +136,7 @@ const RenderPost = ({
 
       <div className={styles.mainContent}>
         <div className={styles.post}>
+          <PostCategory post={post} />
           <PostDate post={post} />
           <PostTags post={post} />
           <PostTitle post={post} enableLink={false} />

@@ -80,6 +80,15 @@
         }
       ]
     },
+    "Category": {
+      "id": "n%3EMM",
+      "type": "select",
+      "select": {
+        "id": "24bcd6f4-fd5f-45f8-b76e-178c862a1ffe",
+        "name": "Learning",
+        "color": "blue"
+      }
+    },
     "Page": {
       "id": "title",
       "name": "Page",

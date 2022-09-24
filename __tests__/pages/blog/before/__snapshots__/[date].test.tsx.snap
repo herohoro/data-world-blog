@@ -18,6 +18,15 @@ exports[`RenderPostsBeforeDate renders the page unchanged 1`] = `
         class="post"
       >
         <div
+          class="blue"
+        >
+          <span
+            class="postCategory"
+          >
+            Learning
+          </span>
+        </div>
+        <div
           class="postDate"
         >
           2021-11-06
@@ -74,6 +83,15 @@ exports[`RenderPostsBeforeDate renders the page unchanged 1`] = `
         class="post"
       >
         <div
+          class="blue"
+        >
+          <span
+            class="postCategory"
+          >
+            Learning
+          </span>
+        </div>
+        <div
           class="postDate"
         >
           2021-11-03
@@ -129,6 +147,15 @@ exports[`RenderPostsBeforeDate renders the page unchanged 1`] = `
       <div
         class="post"
       >
+        <div
+          class="blue"
+        >
+          <span
+            class="postCategory"
+          >
+            Learning
+          </span>
+        </div>
         <div
           class="postDate"
         >

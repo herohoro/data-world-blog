@@ -83,6 +83,13 @@ export const PostTags = ({ post }) => (
       ))}
   </div>
 )
+export const PostCategory = ({ post }) => (
+  <div className={`${post.CategoryColor}`}>
+    <span className={styles.postCategory}>
+      {post.Category ? post.Category : ''}
+    </span>
+  </div>
+)
 
 export const PostExcerpt = ({ post }) => (
   <div className={styles.postExcerpt}>
