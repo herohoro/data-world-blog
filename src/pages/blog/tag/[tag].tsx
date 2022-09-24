@@ -10,6 +10,7 @@ import {
   PostDate,
   PostExcerpt,
   PostTags,
+  PostCategory,
   PostTitle,
   PostsNotFound,
   ReadMoreLink,
@@ -103,6 +104,7 @@ const RenderPostsByTags = ({
         {posts.map((post) => {
           return (
             <div className={styles.post} key={post.Slug}>
+              <PostCategory post={post} />
               <PostDate post={post} />
               <PostTags post={post} />
               <PostTitle post={post} />

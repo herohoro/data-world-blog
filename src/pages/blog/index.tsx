@@ -7,6 +7,7 @@ import {
   PostDate,
   PostExcerpt,
   PostTags,
+  PostCategory,
   PostTitle,
   ReadMoreLink,
   TwitterTimeline,
@@ -55,6 +56,7 @@ const RenderPosts = ({
         {posts.map((post) => {
           return (
             <div className={styles.post} key={post.Slug}>
+              <PostCategory post={post} />
               <PostDate post={post} />
               <PostTags post={post} />
               <PostTitle post={post} />
