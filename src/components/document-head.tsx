@@ -41,7 +41,7 @@ const DocumentHead = ({ title = '', description = '', urlOgImage = '' }) => {
         ) : (
           <meta
             property="og:image"
-            content={new URL('/DWB-default.png', NEXT_PUBLIC_URL).toString()}
+            content={new URL('/DWB-default.jpg', NEXT_PUBLIC_URL).toString()}
           />
         )
       ) : null}
@@ -60,7 +60,7 @@ const DocumentHead = ({ title = '', description = '', urlOgImage = '' }) => {
         ) : (
           <meta
             name="twitter:image"
-            content={new URL('/DWB-default.png', NEXT_PUBLIC_URL).toString()}
+            content={new URL('/DWB-default.jpg', NEXT_PUBLIC_URL).toString()}
           />
         )
       ) : null}
