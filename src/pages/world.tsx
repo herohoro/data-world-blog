@@ -14,6 +14,7 @@ import {
 } from '../components/blog-parts'
 
 import styles from '../styles/blog.module.css'
+import partsStyles from '../styles/blog-parts.module.css'
 // import { getCategoryLink } from '../lib/blog-helpers'
 import { useEffect } from 'react'
 
@@ -82,6 +83,71 @@ const RenderWorld = ({ blocks, firstPost, posts = [], WORLD, redirect }) => {
       </div>
 
       <div className={styles.subContent}>
+        <div
+          className={partsStyles.blogTagLink}
+          style={{ margin: '0 0 3rem 0' }}
+        >
+          <h3
+            style={{
+              fontSize: '1.2rem',
+              fontWeight: '800',
+              textAlign: 'center',
+            }}
+          >
+            ＼Terobi is 3 friends／
+          </h3>
+          <div style={{ padding: '0 0 0 20px ' }}>
+            <p>
+              &#x1f376;
+              <span style={{ padding: '0 0 0 10px' }}>
+                <span
+                  style={{
+                    color: 'yellow',
+                    fontSize: '1.5rem',
+                    fontWeight: 'bolder',
+                    paddingRight: '0.3rem',
+                  }}
+                >
+                  Te
+                </span>
+                ra san
+              </span>
+            </p>
+            <p>
+              &#x1f40c;
+              <span style={{ padding: '0 0 0 10px' }}>
+                he
+                <span
+                  style={{
+                    color: 'yellow',
+                    fontSize: '1.5rem',
+                    fontWeight: 'bolder',
+                    padding: '0 0.3rem',
+                  }}
+                >
+                  ro
+                </span>
+                horo
+              </span>
+            </p>
+            <p>
+              &#x1f3b8;
+              <span style={{ padding: '0 0 0 10px' }}>
+                ****
+                <span
+                  style={{
+                    color: 'yellow',
+                    fontSize: '1.5rem',
+                    fontWeight: 'bolder',
+                    paddingLeft: '0.3rem',
+                  }}
+                >
+                  bi
+                </span>
+              </span>
+            </p>
+          </div>
+        </div>
         <a
           className="twitter-timeline"
           data-lang="en"
