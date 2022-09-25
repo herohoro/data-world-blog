@@ -111,7 +111,8 @@ const RenderPostsByCategoryBeforeDate = ({
       <DocumentHead description={`Posts in ${category} before ${date}`} />
       <div className={styles.mainContent}>
         <header>
-          <h2>{category}</h2>
+          <span style={{ marginRight: '3rem' }}>category:</span>
+          <h2 style={{ marginLeft: '3rem' }}>{category}</h2>
         </header>
 
         <NoContents contents={posts} />
