@@ -9,6 +9,7 @@ import { Block } from '../../lib/notion/interfaces'
 import {
   BlogPostLink,
   BlogTagLink,
+  BlogCategoryLink,
   NoContents,
   PostBody,
   PostDate,
