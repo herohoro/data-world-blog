@@ -8,7 +8,9 @@ import {
   getBlogLink,
   getDateStr,
   getTagLink,
+  getCategoryLink,
   getTagBeforeLink,
+  getCategoryBeforeLink,
 } from '../lib/blog-helpers'
 import styles from '../styles/blog-parts.module.css'
 
@@ -85,9 +87,19 @@ export const PostTags = ({ post }) => (
 )
 export const PostCategory = ({ post }) => (
   <div className={`${post.CategoryColor}`}>
-    <span className={styles.postCategory}>
+    {/* <span className={styles.postCategory}>
       {post.Category ? post.Category : ''}
-    </span>
+    </span> */}
+    <Link
+      href="/blog/category/[category]"
+      as={getCategoryLink(post.Category)}
+      key={post.Category}
+      passHref
+    >
+      <span className={styles.postCategory}>
+        {post.Category ? post.Category : ''}
+      </span>
+    </Link>
   </div>
 )
 
@@ -115,7 +127,7 @@ export const ReadMoreLink = ({ post }) => (
   </div>
 )
 
-export const NextPageLink = ({ firstPost, posts, tag = '' }) => {
+export const NextPageLink = ({ firstPost, posts, tag = '', category = '' }) => {
   if (!firstPost) return null
   if (posts.length === 0) return null
 
@@ -126,10 +138,18 @@ export const NextPageLink = ({ firstPost, posts, tag = '' }) => {
   return (
     <div className={styles.nextPageLink}>
       <Link
-        href={tag ? '/blog/tag/[tag]/before/[date]' : '/blog/before/[date]'}
+        href={
+          tag
+            ? '/blog/tag/[tag]/before/[date]'
+            : category
+            ? '/blog/category/[category]/before/[date]'
+            : '/blog/before/[date]'
+        }
         as={
           tag
             ? getTagBeforeLink(tag, lastPost.Date)
+            : category
+            ? getCategoryBeforeLink(category, lastPost.Date)
             : getBeforeLink(lastPost.Date)
         }
         passHref
@@ -139,7 +159,12 @@ export const NextPageLink = ({ firstPost, posts, tag = '' }) => {
     </div>
   )
 }
-export const NextBackPageLink = ({ firstPost, posts, tag = '' }) => {
+export const NextBackPageLink = ({
+  firstPost,
+  posts,
+  tag = '',
+  category = '',
+}) => {
   const router = useRouter()
   if (!firstPost) return null
   if (posts.length === 0) return null
@@ -156,10 +181,18 @@ export const NextBackPageLink = ({ firstPost, posts, tag = '' }) => {
           ＜ New{' '}
         </a>
         <Link
-          href={tag ? '/blog/tag/[tag]/before/[date]' : '/blog/before/[date]'}
+          href={
+            tag
+              ? '/blog/tag/[tag]/before/[date]'
+              : category
+              ? '/blog/category/[category]/before/[date]'
+              : '/blog/before/[date]'
+          }
           as={
             tag
               ? getTagBeforeLink(tag, lastPost.Date)
+              : category
+              ? getCategoryBeforeLink(category, lastPost.Date)
               : getBeforeLink(lastPost.Date)
           }
           passHref
@@ -237,6 +270,14 @@ export const BlogTagLink = ({ heading, tags }) => (
   </div>
 )
 
+export const BlogCategoryLink = ({ heading, categorys }) => (
+  <div className={styles.blogTagLink}>
+    <h3>{heading}</h3>
+    <NoContents contents={categorys} />
+    <CategoryLinkList categorys={categorys} />
+  </div>
+)
+
 export const PostLinkList = ({ posts }) => {
   if (!posts || posts.length === 0) return null
 
@@ -265,6 +306,28 @@ export const TagLinkList = ({ tags }) => {
           <li key={tag}>
             <Link href="/blog/tag/[tag]" as={getTagLink(tag)} passHref>
               <a>{tag}</a>
+            </Link>
+          </li>
+        )
+      })}
+    </ul>
+  )
+}
+
+export const CategoryLinkList = ({ categorys }) => {
+  if (!categorys || categorys.length === 0) return null
+
+  return (
+    <ul className={styles.categoryList}>
+      {categorys.map((category: string) => {
+        return (
+          <li key={category}>
+            <Link
+              href="/blog/category/[category]"
+              as={getCategoryLink(category)}
+              passHref
+            >
+              <a>{category}</a>
             </Link>
           </li>
         )
