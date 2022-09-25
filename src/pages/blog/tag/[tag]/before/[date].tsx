@@ -106,7 +106,8 @@ const RenderPostsByTagBeforeDate = ({
 
       <div className={styles.mainContent}>
         <header>
-          <h2>{tag}</h2>
+          <span style={{ marginRight: '1rem' }}>tag:</span>
+          <h2 style={{ marginLeft: '3rem' }}>{tag}</h2>
         </header>
 
         <NoContents contents={posts} />
