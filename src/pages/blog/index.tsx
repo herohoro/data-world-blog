@@ -2,6 +2,7 @@ import DocumentHead from '../../components/document-head'
 import {
   BlogPostLink,
   BlogTagLink,
+  BlogCategoryLink,
   NextPageLink,
   NoContents,
   PostDate,
@@ -19,14 +20,16 @@ import {
   getFirstPost,
   getRankedPosts,
   getAllTags,
+  getAllCategorys,
 } from '../../lib/notion/client'
 
 export async function getStaticProps() {
-  const [posts, firstPost, rankedPosts, tags] = await Promise.all([
+  const [posts, firstPost, rankedPosts, tags, categorys] = await Promise.all([
     getPosts(),
     getFirstPost(),
     getRankedPosts(),
     getAllTags(),
+    getAllCategorys(),
   ])
 
   return {
@@ -34,6 +37,7 @@ export async function getStaticProps() {
       posts,
       firstPost,
       rankedPosts,
+      categorys,
       tags,
     },
     revalidate: 60,
@@ -44,6 +48,7 @@ const RenderPosts = ({
   posts = [],
   firstPost,
   rankedPosts = [],
+  categorys = [],
   tags = [],
 }) => {
   return (
@@ -74,8 +79,9 @@ const RenderPosts = ({
 
       <div className={styles.subContent}>
         <TwitterTimeline />
+        <BlogCategoryLink heading="Categorys" categorys={categorys} />
+        <BlogTagLink heading="Tags" tags={tags} />
         <BlogPostLink heading="Recommended" posts={rankedPosts} />
-        <BlogTagLink heading="Categories" tags={tags} />
       </div>
     </div>
   )

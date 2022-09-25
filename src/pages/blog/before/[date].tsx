@@ -6,6 +6,7 @@ import DocumentHead from '../../../components/document-head'
 import {
   BlogPostLink,
   BlogTagLink,
+  BlogCategoryLink,
   BackPageLink,
   NextBackPageLink,
   NoContents,
@@ -27,6 +28,7 @@ import {
   getPostsBefore,
   getFirstPost,
   getAllTags,
+  getAllCategorys,
 } from '../../../lib/notion/client'
 
 export async function getStaticProps({ params: { date } }) {
@@ -34,11 +36,12 @@ export async function getStaticProps({ params: { date } }) {
     return { notFound: true }
   }
 
-  const [posts, firstPost, rankedPosts, tags] = await Promise.all([
+  const [posts, firstPost, rankedPosts, tags, categorys] = await Promise.all([
     getPostsBefore(date, NUMBER_OF_POSTS_PER_PAGE),
     getFirstPost(),
     getRankedPosts(),
     getAllTags(),
+    getAllCategorys(),
   ])
 
   return {
@@ -48,6 +51,7 @@ export async function getStaticProps({ params: { date } }) {
       firstPost,
       rankedPosts,
       tags,
+      categorys,
     },
     revalidate: 3600,
   }
@@ -69,6 +73,7 @@ const RenderPostsBeforeDate = ({
   firstPost,
   rankedPosts = [],
   tags = [],
+  categorys = [],
   redirect,
 }) => {
   const router = useRouter()
@@ -115,8 +120,9 @@ const RenderPostsBeforeDate = ({
       </div>
 
       <div className={styles.subContent}>
+        <BlogCategoryLink heading="Categorys" categorys={categorys} />
+        <BlogTagLink heading="Tags" tags={tags} />
         <BlogPostLink heading="Recommended" posts={rankedPosts} />
-        <BlogTagLink heading="Categories" tags={tags} />
       </div>
     </div>
   )

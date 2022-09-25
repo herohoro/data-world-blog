@@ -139,8 +139,8 @@ const RenderPostsByCategorys = ({
       </div>
 
       <div className={styles.subContent}>
-        <BlogCategoryLink heading="Category List" categorys={categorys} />
-        <BlogTagLink heading="Tag List" tags={tags} />
+        <BlogCategoryLink heading="Categorys" categorys={categorys} />
+        <BlogTagLink heading="Tags" tags={tags} />
         <BlogPostLink heading="Recommended" posts={rankedPosts} />
         <BlogPostLink heading="Latest Posts" posts={recentPosts} />
         <TwitterTimeline />

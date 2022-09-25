@@ -29,6 +29,7 @@ import {
   getPostBySlug,
   getPostsByTag,
   getAllTags,
+  getAllCategorys,
   getAllBlocksByBlockId,
 } from '../../lib/notion/client'
 
@@ -45,12 +46,13 @@ export async function getStaticProps({ params: { slug } }) {
     }
   }
 
-  const [blocks, rankedPosts, recentPosts, tags, sameTagPosts] =
+  const [blocks, rankedPosts, recentPosts, tags, categorys, sameTagPosts] =
     await Promise.all([
       getAllBlocksByBlockId(post.PageId),
       getRankedPosts(),
       getPosts(5),
       getAllTags(),
+      getAllCategorys(),
       getPostsByTag(post.Tags[0], 6),
     ])
 
@@ -64,6 +66,7 @@ export async function getStaticProps({ params: { slug } }) {
       rankedPosts,
       recentPosts,
       tags,
+      categorys,
       sameTagPosts: sameTagPosts.filter((p: Post) => p.Slug !== post.Slug),
       fallback,
     },
@@ -114,6 +117,7 @@ const RenderPost = ({
   recentPosts = [],
   sameTagPosts = [],
   tags = [],
+  categorys = [],
   fallback,
 }) => {
   const { data: blocks, error } = useSWR(
@@ -167,9 +171,10 @@ const RenderPost = ({
           heading="Posts in the same category"
           posts={sameTagPosts}
         />
+        <BlogCategoryLink heading="Categorys" categorys={categorys} />
+        <BlogTagLink heading="Tags" tags={tags} />
         <BlogPostLink heading="Recommended" posts={rankedPosts} />
         <BlogPostLink heading="Latest posts" posts={recentPosts} />
-        <BlogTagLink heading="Categories" tags={tags} />
       </div>
     </div>
   )
