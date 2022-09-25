@@ -316,6 +316,43 @@ export async function getPostsByCategory(category: string, pageSize = 100) {
     .filter((item) => _validPost(item))
     .map((item) => _buildPost(item))
 }
+export async function getPostsByCategory_World(WORLD: string, pageSize = 100) {
+  if (blogIndexCache.exists()) {
+    const allPosts = await getAllPosts()
+    return (
+      allPosts
+        // .filter((post) => post.Category.includes(category))
+        .filter((post) => post.Category === WORLD)
+        .slice(0, pageSize)
+    )
+  }
+
+  const params = {
+    database_id: DATABASE_ID,
+    filter: _buildFilter([
+      {
+        property: 'Category',
+        select: {
+          equals: 'WORLD',
+        },
+      },
+    ]),
+    sorts: [
+      {
+        property: 'Date',
+        timestamp: 'created_time',
+        direction: 'descending',
+      },
+    ],
+    page_size: pageSize,
+  }
+
+  const data = await client.databases.query(params)
+
+  return data.results
+    .filter((item) => _validPost(item))
+    .map((item) => _buildPost(item))
+}
 
 export async function getPostsByTagBefore(
   tag: string,
