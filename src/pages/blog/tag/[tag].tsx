@@ -5,6 +5,7 @@ import DocumentHead from '../../../components/document-head'
 import {
   BlogPostLink,
   BlogTagLink,
+  BlogCategoryLink,
   NextPageLink,
   NoContents,
   PostDate,
@@ -25,6 +26,7 @@ import {
   getPostsByTag,
   getFirstPostByTag,
   getAllTags,
+  getAllCategorys,
 } from '../../../lib/notion/client'
 
 export async function getStaticProps({ params: { tag } }) {
@@ -40,12 +42,14 @@ export async function getStaticProps({ params: { tag } }) {
     }
   }
 
-  const [firstPost, rankedPosts, recentPosts, tags] = await Promise.all([
-    getFirstPostByTag(tag),
-    getRankedPosts(),
-    getPosts(5),
-    getAllTags(),
-  ])
+  const [firstPost, rankedPosts, recentPosts, tags, categorys] =
+    await Promise.all([
+      getFirstPostByTag(tag),
+      getRankedPosts(),
+      getPosts(5),
+      getAllTags(),
+      getAllCategorys(),
+    ])
 
   return {
     props: {
@@ -53,6 +57,7 @@ export async function getStaticProps({ params: { tag } }) {
       firstPost,
       rankedPosts,
       recentPosts,
+      categorys,
       tags,
       tag,
     },
@@ -76,6 +81,7 @@ const RenderPostsByTags = ({
   rankedPosts = [],
   recentPosts = [],
   tags = [],
+  categorys = [],
   redirect,
 }) => {
   const router = useRouter()
@@ -121,9 +127,10 @@ const RenderPostsByTags = ({
       </div>
 
       <div className={styles.subContent}>
+        <BlogCategoryLink heading="Categorys" categorys={categorys} />
+        <BlogTagLink heading="Tags" tags={tags} />
         <BlogPostLink heading="Recommended" posts={rankedPosts} />
         <BlogPostLink heading="Latest Posts" posts={recentPosts} />
-        <BlogTagLink heading="Categories" tags={tags} />
       </div>
     </div>
   )

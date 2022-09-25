@@ -240,6 +240,34 @@ exports[`RenderPostsBeforeDate renders the page unchanged 1`] = `
       class="subContent"
     >
       <div
+        class="blogTagLink"
+      >
+        <h3>
+          Categorys
+        </h3>
+        <div
+          class="noContents"
+        >
+          There are no contents yet
+        </div>
+      </div>
+      <div
+        class="blogTagLink"
+      >
+        <h3>
+          Tags
+        </h3>
+        <ul>
+          <li>
+            <a
+              href="/blog/tag/Diary"
+            >
+              Diary
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div
         class="blogPostLink"
       >
         <h3>
@@ -265,22 +293,6 @@ exports[`RenderPostsBeforeDate renders the page unchanged 1`] = `
               href="/blog/my-first-post"
             >
               My 1st post
-            </a>
-          </li>
-        </ul>
-      </div>
-      <div
-        class="blogTagLink"
-      >
-        <h3>
-          Categories
-        </h3>
-        <ul>
-          <li>
-            <a
-              href="/blog/tag/Diary"
-            >
-              Diary
             </a>
           </li>
         </ul>
