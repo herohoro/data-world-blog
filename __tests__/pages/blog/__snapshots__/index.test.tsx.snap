@@ -16,6 +16,7 @@ exports[`RenderPosts renders the page unchanged 1`] = `
         >
           <span
             class="postCategory"
+            href="/blog/category/Learning"
           >
             Learning
           </span>
@@ -81,6 +82,7 @@ exports[`RenderPosts renders the page unchanged 1`] = `
         >
           <span
             class="postCategory"
+            href="/blog/category/Learning"
           >
             Learning
           </span>
@@ -146,6 +148,7 @@ exports[`RenderPosts renders the page unchanged 1`] = `
         >
           <span
             class="postCategory"
+            href="/blog/category/Learning"
           >
             Learning
           </span>

@@ -16,6 +16,7 @@ exports[`RenderPost renders the page unchanged 1`] = `
         >
           <span
             class="postCategory"
+            href="/blog/category/Learning"
           >
             Learning
           </span>
