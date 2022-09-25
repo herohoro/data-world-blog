@@ -9,7 +9,14 @@ exports[`RenderPostsByTagsBeforeDate renders the page unchanged 1`] = `
       class="mainContent"
     >
       <header>
-        <h2>
+        <span
+          style="margin-right: 1rem;"
+        >
+          tag:
+        </span>
+        <h2
+          style="margin-left: 3rem;"
+        >
           Diary
         </h2>
       </header>
