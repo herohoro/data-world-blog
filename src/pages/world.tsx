@@ -58,7 +58,10 @@ const RenderWorld = ({ blocks, firstPost, posts = [], WORLD, redirect }) => {
 
   return (
     <div className={styles.container}>
-      <DocumentHead description={`Posts in ${WORLD}`} />
+      <DocumentHead
+        description={`Posts in ${WORLD}`}
+        urlOgImage={'japanglish-default.jpg'}
+      />
 
       <div className={styles.worldMainContent}>
         <NotionBlocks blocks={blocks} />

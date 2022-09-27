@@ -30,39 +30,19 @@ const DocumentHead = ({ title = '', description = '', urlOgImage = '' }) => {
       {urlOgImage ? (
         <meta property="og:image" content={urlOgImage} />
       ) : NEXT_PUBLIC_URL ? (
-        new URL('/world', NEXT_PUBLIC_URL).toString() ? (
-          <meta
-            property="og:image"
-            content={new URL(
-              '/japanglish-default.jpg',
-              NEXT_PUBLIC_URL
-            ).toString()}
-          />
-        ) : (
-          <meta
-            property="og:image"
-            content={new URL('/DWB-default.jpg', NEXT_PUBLIC_URL).toString()}
-          />
-        )
+        <meta
+          property="og:image"
+          content={new URL('/DWB-default.jpg', NEXT_PUBLIC_URL).toString()}
+        />
       ) : null}
       <meta name="twitter:card" content="summary_large_image" />
       {urlOgImage ? (
         <meta name="twitter:image" content={urlOgImage} />
       ) : NEXT_PUBLIC_URL ? (
-        new URL('/world', NEXT_PUBLIC_URL).toString() ? (
-          <meta
-            property="og:image"
-            content={new URL(
-              '/japanglish-default.jpg',
-              NEXT_PUBLIC_URL
-            ).toString()}
-          />
-        ) : (
-          <meta
-            name="twitter:image"
-            content={new URL('/DWB-default.jpg', NEXT_PUBLIC_URL).toString()}
-          />
-        )
+        <meta
+          name="twitter:image"
+          content={new URL('/DWB-default.jpg', NEXT_PUBLIC_URL).toString()}
+        />
       ) : null}
       {NEXT_PUBLIC_URL ? (
         <link
