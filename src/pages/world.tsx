@@ -59,7 +59,7 @@ const RenderWorld = ({ blocks, firstPost, posts = [], WORLD, redirect }) => {
   return (
     <div className={styles.container}>
       <DocumentHead
-        description={`Posts in ${WORLD}`}
+        description="WORLD_study-friends"
         urlOgImage={'japanglish-default.jpg'}
       />
 
