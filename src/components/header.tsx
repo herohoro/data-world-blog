@@ -15,7 +15,7 @@ const Header = () => {
   const navItems: NavItem[] = [
     { label: 'Home', path: '/' },
     { label: 'AllPost', path: '/blog' },
-    // { label: 'WORLD', path: '/world' },
+    { label: 'WORLD', path: '/world' },
   ]
 
   return (
