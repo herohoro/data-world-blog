@@ -24,6 +24,7 @@ export interface Block {
   Heading3?: Heading3
   BulletedListItem?: BulletedListItem
   NumberedListItem?: NumberedListItem
+  ToDo?: ToDo
   Image?: Image
   Code?: Code
   Quote?: Quote
@@ -68,6 +69,13 @@ export interface BulletedListItem {
 
 export interface NumberedListItem {
   RichTexts: RichText[]
+  Color: string
+  Children?: Block[]
+}
+
+export interface ToDo {
+  RichTexts: RichText[]
+  Checked: boolean
   Color: string
   Children?: Block[]
 }
