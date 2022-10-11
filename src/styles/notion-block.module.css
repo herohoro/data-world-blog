@@ -139,7 +139,7 @@
 
 .table th,
 .table td {
-  white-space: nowrap;
+  white-space: pre;
 }
 
 .columnList {
