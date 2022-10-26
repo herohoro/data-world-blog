@@ -246,6 +246,47 @@
   background: var(--accents-4);
 }
 
+.indexList {
+  margin-top: auto;
+  background: rgba(57, 8, 78, 0.871);
+
+  border: 1px dashed #dc7ffe;
+  border-radius: 10px;
+  padding: 45px 4px;
+  overflow-x: auto;
+
+  /* scroll固定 */
+  position: sticky;
+  position: -webkit-sticky;
+  right: auto;
+  bottom: 10px;
+  /* z-index: 1; */
+}
+.indexList a:hover {
+  color: var(--hero-hover-fg);
+}
+.indexList h3 {
+  font-size: 1.5rem;
+  text-align: center;
+}
+.indexList h4::before {
+  content: ' 🟠 ';
+}
+.indexList h5::before {
+  content: '  ├─ ';
+}
+.indexList h6::before {
+  content: '   |  └─ ';
+}
+.indexList h4,
+.indexList h5,
+.indexList h6 {
+  margin: 0;
+  font-size: 0.8rem;
+  /* white-space: nowrap; */
+  white-space: pre-wrap;
+}
+
 .postsNotFound {
   margin-top: 10rem;
   color: var(--accents-3);

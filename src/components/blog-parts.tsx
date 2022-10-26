@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { Post } from '../lib/notion/interfaces'
 import NotionBlocks from './notion-block'
+import MokujiBlocks from './mokuji-block'
 import {
   getBeforeLink,
   getBlogLink,
@@ -112,6 +113,13 @@ export const PostExcerpt = ({ post }) => (
 export const PostBody = ({ blocks }) => (
   <div className={styles.postBody}>
     <NotionBlocks blocks={blocks} />
+  </div>
+)
+
+export const IndexList = ({ blocks, heading }) => (
+  <div className={styles.indexList}>
+    <h3>{heading}</h3>
+    <MokujiBlocks blocks={blocks} />
   </div>
 )
 
