@@ -8,7 +8,7 @@ export interface Post {
   OGImage: string
   Rank: number
   ShareUrl?: string
-  Person?: string
+  Person?: string[]
   Category?: string
   CategoryColor?: string
 }
