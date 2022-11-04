@@ -81,7 +81,11 @@ const RenderWorld = ({ blocks, firstPost, posts = [], WORLD, redirect }) => {
         })}
 
         <footer>
-          <NextPageLink firstPost={firstPost} posts={posts} category={WORLD} />
+          <NextPageLink
+            firstPost={firstPost}
+            posts={posts}
+            category={'WORLD'}
+          />
         </footer>
       </div>
 
