@@ -25,14 +25,12 @@ import {
   getPostsByCategory,
   getFirstPostByCategory,
 } from '../lib/notion/client'
-import * as imageCache from '../lib/notion/image-cache'
 
 export async function getStaticProps() {
   const posts = await getPostsByCategory('WORLD', NUMBER_OF_POSTS_PER_PAGE)
   const blocks = await getAllBlocksByBlockId(TEROBI_PAGE_ID)
   const firstPost = await getFirstPostByCategory('WORLD')
 
-  posts.forEach((p) => p.OGImage && imageCache.store(p.PageId, p.OGImage))
   return {
     props: {
       blocks,
