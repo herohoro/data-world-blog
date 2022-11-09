@@ -41,7 +41,7 @@ export async function getStaticProps() {
   }
 }
 
-const RenderWorld = ({ blocks, firstPost, posts = [], WORLD, redirect }) => {
+const RenderWorld = ({ blocks, firstPost, posts = [], redirect }) => {
   const router = useRouter()
 
   useEffect(() => {
