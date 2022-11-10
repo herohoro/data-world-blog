@@ -1,7 +1,7 @@
 import React from 'react'
 import useSWR from 'swr'
 import axios from 'axios'
-
+import Toc from '../../components/toc'
 import { NEXT_PUBLIC_URL } from '../../lib/notion/server-constants'
 import { Post } from '../../lib/notion/interfaces'
 import DocumentHead from '../../components/document-head'
@@ -177,7 +177,8 @@ const RenderPost = ({
         <BlogTagLink heading="Tags" tags={tags} />
         <BlogPostLink heading="Recommended" posts={rankedPosts} />
         <BlogPostLink heading="Latest posts" posts={recentPosts} />
-        <IndexList heading="★ MOKUJI ★" blocks={blocks} />
+        {/* <IndexList heading="★ MOKUJI ★" blocks={blocks} /> */}
+        <Toc />
       </div>
     </div>
   )
