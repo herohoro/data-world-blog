@@ -254,6 +254,7 @@
   border-radius: 10px;
   padding: 45px 4px;
   overflow-x: auto;
+  white-space: nowrap;
 
   /* scroll固定 */
   position: sticky;
@@ -269,7 +270,7 @@
   font-size: 1.5rem;
   text-align: center;
 }
-.indexList h4::before {
+/* .indexList h4::before {
   content: ' 🟠 ';
 }
 .indexList h5::before {
@@ -277,6 +278,18 @@
 }
 .indexList h6::before {
   content: '   |  └─ ';
+} */
+.indexList :global .is-active-link {
+  color: rgba(219, 239, 40, 0.954);
+  font-weight: 700;
+}
+.indexList :global .toc-list-item {
+  overflow: scroll;
+}
+.indexList :global .toc-list {
+  padding-left: 1.5rem;
+  padding-top: 0.1rem;
+  list-style-type: none;
 }
 .indexList h4,
 .indexList h5,
