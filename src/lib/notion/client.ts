@@ -152,7 +152,10 @@ export async function getRankedPosts(pageSize = 10): Promise<Post[]> {
     .map((pageObject) => _buildPost(pageObject))
 }
 
-export async function getPostsBefore(date: string, pageSize = 10): Promise<Post[]> {
+export async function getPostsBefore(
+  date: string,
+  pageSize = 10
+): Promise<Post[]> {
   if (blogIndexCache.exists()) {
     const allPosts = await getAllPosts()
     return allPosts.filter((post) => post.Date < date).slice(0, pageSize)
@@ -187,7 +190,7 @@ export async function getPostsBefore(date: string, pageSize = 10): Promise<Post[
     .map((pageObject) => _buildPost(pageObject))
 }
 
-export async function getFirstPost(): Promise<Post|null> {
+export async function getFirstPost(): Promise<Post | null> {
   if (blogIndexCache.exists()) {
     const allPosts = await getAllPosts()
     return allPosts[allPosts.length - 1]
@@ -221,7 +224,7 @@ export async function getFirstPost(): Promise<Post|null> {
   return _buildPost(res.results[0])
 }
 
-export async function getPostBySlug(slug: string): Promise<Post|null> {
+export async function getPostBySlug(slug: string): Promise<Post | null> {
   if (blogIndexCache.exists()) {
     const allPosts = await getAllPosts()
     return allPosts.find((post) => post.Slug === slug)
@@ -257,7 +260,10 @@ export async function getPostBySlug(slug: string): Promise<Post|null> {
   return _buildPost(res.results[0])
 }
 
-export async function getPostsByTag(tag: string | undefined, pageSize = 100): Promise<Post[]> {
+export async function getPostsByTag(
+  tag: string | undefined,
+  pageSize = 100
+): Promise<Post[]> {
   if (!tag) return []
 
   if (blogIndexCache.exists()) {
@@ -474,7 +480,7 @@ export async function getPostsByCategoryBefore(
     .map((pageObject) => _buildPost(pageObject))
 }
 
-export async function getFirstPostByTag(tag: string): Promise<Post|null> {
+export async function getFirstPostByTag(tag: string): Promise<Post | null> {
   if (blogIndexCache.exists()) {
     const allPosts = await getAllPosts()
     const sameTagPosts = allPosts.filter((post) => post.Tags.includes(tag))
@@ -997,7 +1003,7 @@ function _buildPost(pageObject: responses.PageObject): Post {
       prop.OGImage.files.length > 0 ? prop.OGImage.files[0].file.url : null,
     Rank: prop.Rank.number,
     ShareUrl: prop.ShareUrl.url,
-    Person: prop.Person.people.map((opt) => opt.object),
+    Person: prop.Person.people.map((opt) => opt.name),
     Category: prop.Category.select.name,
     CategoryColor: prop.Category.select.color,
   }
