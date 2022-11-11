@@ -19,7 +19,6 @@ import {
   PostsNotFound,
   ShareUrl,
   PostPerson,
-  IndexList,
 } from '../../components/blog-parts'
 import SocialButtons from '../../components/social-buttons'
 import styles from '../../styles/blog.module.css'
