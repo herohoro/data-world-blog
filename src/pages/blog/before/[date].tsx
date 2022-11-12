@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { useRouter } from 'next/router'
-
+import { Link as Scroll } from 'react-scroll'
 import { NUMBER_OF_POSTS_PER_PAGE } from '../../../lib/notion/server-constants'
 import DocumentHead from '../../../components/document-head'
 import {
@@ -93,7 +93,7 @@ const RenderPostsBeforeDate = ({
     <div className={styles.container}>
       <DocumentHead description={`Post before ${date.split('T')[0]}`} />
       <div className={styles.flexWraper}>
-        <div className={styles.mainContent}>
+        <div className={styles.mainContent} id="topJump">
           <header>
             <h2>Posts before {date.split('T')[0]}</h2>
           </header>
@@ -124,6 +124,9 @@ const RenderPostsBeforeDate = ({
           <BlogCategoryLink heading="Categorys" categorys={categorys} />
           <BlogTagLink heading="Tags" tags={tags} />
           <BlogPostLink heading="Recommended" posts={rankedPosts} />
+          <Scroll to="topJump" className={styles.topJump} smooth={true}>
+            Top
+          </Scroll>
         </div>
       </div>
       <div className={styles.endContent}>

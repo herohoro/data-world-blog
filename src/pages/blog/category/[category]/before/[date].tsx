@@ -19,7 +19,7 @@ import {
   ReadMoreLink,
   PostPerson,
 } from '../../../../../components/blog-parts'
-
+import { Link as Scroll } from 'react-scroll'
 import {
   getPosts,
   getRankedPosts,
@@ -110,7 +110,7 @@ const RenderPostsByCategoryBeforeDate = ({
     <div className={styles.container}>
       <DocumentHead description={`Posts in ${category} before ${date}`} />
       <div className={styles.flexWraper}>
-        <div className={styles.mainContent}>
+        <div className={styles.mainContent} id="topJump">
           <header>
             <span style={{ marginRight: '3rem' }}>category:</span>
             <h2 style={{ marginLeft: '3rem' }}>{category}</h2>
@@ -148,6 +148,9 @@ const RenderPostsByCategoryBeforeDate = ({
           <BlogPostLink heading="Recommended" posts={rankedPosts} />
           <BlogPostLink heading="Latest Posts" posts={recentPosts} />
           <TwitterTimeline />
+          <Scroll to="topJump" className={styles.topJump} smooth={true}>
+            Top
+          </Scroll>
         </div>
       </div>
       <div className={styles.endContent}>

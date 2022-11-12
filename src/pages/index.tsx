@@ -3,6 +3,7 @@ import styles from '../styles/page.module.css'
 import { INDEX_PAGE_ID } from '../lib/notion/server-constants'
 import NotionBlocks from '../components/notion-block'
 import { getAllBlocksByBlockId } from '../lib/notion/client'
+import { Link as Scroll } from 'react-scroll'
 
 export async function getStaticProps() {
   const blocks = await getAllBlocksByBlockId(INDEX_PAGE_ID)
@@ -15,9 +16,12 @@ export async function getStaticProps() {
 }
 
 const RenderPage = ({ blocks }) => (
-  <div className={styles.container}>
+  <div className={styles.container} id="topJump">
     <DocumentHead />
     <NotionBlocks blocks={blocks} />
+    <Scroll to="topJump" className={styles.topJump} smooth={true}>
+      Top
+    </Scroll>
   </div>
 )
 

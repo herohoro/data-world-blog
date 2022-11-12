@@ -1,5 +1,5 @@
 import { useRouter } from 'next/router'
-
+import { Link as Scroll } from 'react-scroll'
 import { NUMBER_OF_POSTS_PER_PAGE } from '../../../lib/notion/server-constants'
 import DocumentHead from '../../../components/document-head'
 import {
@@ -101,7 +101,7 @@ const RenderPostsByTags = ({
     <div className={styles.container}>
       <DocumentHead description={`Posts in ${tag}`} />
       <div className={styles.flexWraper}>
-        <div className={styles.mainContent}>
+        <div className={styles.mainContent} id="topJump">
           <header>
             <span style={{ marginRight: '1rem' }}>tag:</span>
             <h2 style={{ marginLeft: '3rem' }}>{tag}</h2>
@@ -133,6 +133,9 @@ const RenderPostsByTags = ({
           <BlogTagLink heading="Tags" tags={tags} />
           <BlogPostLink heading="Recommended" posts={rankedPosts} />
           <BlogPostLink heading="Latest Posts" posts={recentPosts} />
+          <Scroll to="topJump" className={styles.topJump} smooth={true}>
+            Top
+          </Scroll>
         </div>
       </div>
       <div className={styles.endContent}>

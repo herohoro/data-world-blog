@@ -22,6 +22,7 @@ import {
   getAllTags,
   getAllCategorys,
 } from '../../lib/notion/client'
+import { Link as Scroll } from 'react-scroll'
 
 export async function getStaticProps() {
   const [posts, firstPost, rankedPosts, tags, categorys] = await Promise.all([
@@ -55,7 +56,7 @@ const RenderPosts = ({
     <div className={styles.container}>
       <DocumentHead title="AllPost" />
       <div className={styles.flexWraper}>
-        <div className={styles.mainContent}>
+        <div className={styles.mainContent} id="topJump">
           <NoContents contents={posts} />
 
           {posts.map((post) => {
@@ -82,6 +83,9 @@ const RenderPosts = ({
           <BlogCategoryLink heading="Categorys" categorys={categorys} />
           <BlogTagLink heading="Tags" tags={tags} />
           <BlogPostLink heading="Recommended" posts={rankedPosts} />
+          <Scroll to="topJump" className={styles.topJump} smooth={true}>
+            Top
+          </Scroll>
         </div>
       </div>
       <div className={styles.endContent}>

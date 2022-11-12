@@ -17,7 +17,7 @@ import styles from '../styles/world.module.css'
 import partsStyles from '../styles/blog-parts.module.css'
 // import { getCategoryLink } from '../lib/blog-helpers'
 import { useEffect } from 'react'
-
+import { Link as Scroll } from 'react-scroll'
 import { TEROBI_PAGE_ID } from '../lib/notion/server-constants'
 import NotionBlocks from '../components/notion-block'
 import {
@@ -61,7 +61,7 @@ const RenderWorld = ({ blocks, firstPost, posts = [], redirect }) => {
         urlOgImage={'japanglish-default.jpg'}
       />
 
-      <div className={styles.mainContent}>
+      <div className={styles.mainContent} id="topJump">
         <NotionBlocks blocks={blocks} />
 
         {posts.map((post) => {
@@ -198,6 +198,9 @@ const RenderWorld = ({ blocks, firstPost, posts = [], redirect }) => {
           // charset="utf-8"
         ></script>
       </div>
+      <Scroll to="topJump" className={styles.topJump} smooth={true}>
+        Top
+      </Scroll>
     </div>
   )
 }

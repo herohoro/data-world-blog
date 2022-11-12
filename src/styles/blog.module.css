@@ -10,22 +10,23 @@
 .topJump:hover {
   color: #2c1289;
   background: rgba(219, 239, 40, 0.954);
-  /* background: #2c1289; */
 }
 .topJump {
   background: rgba(212, 28, 169, 0.871);
   border-radius: 50%;
-  border: #eb5757;
+  border: 2px ridge #6e59d9bf;
   padding: 15px;
   font-weight: bolder;
   margin-top: 10px;
   cursor: hand;
   cursor: pointer;
 
-  position: sticky;
-  position: -webkit-sticky;
-  right: auto;
+  color: #0f6ba9;
+  position: fixed;
+  right: 30px;
   bottom: 20px;
+  transition: 1s;
+  opacity: 0.8;
 }
 @media (max-width: 600px) {
   .mainContent footer {
