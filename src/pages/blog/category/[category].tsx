@@ -103,7 +103,7 @@ const RenderPostsByCategorys = ({
     <div className={styles.container}>
       <DocumentHead description={`Posts in ${category}`} />
       <div className={styles.flexWraper}>
-        <div className={styles.mainContent} id="topJump">
+        <div className={styles.mainContent}>
           <header>
             <span style={{ marginRight: '3rem' }}>category:</span>
             <h2 style={{ marginLeft: '3rem' }}>{category}</h2>
@@ -140,9 +140,6 @@ const RenderPostsByCategorys = ({
           <BlogPostLink heading="Recommended" posts={rankedPosts} />
           <BlogPostLink heading="Latest Posts" posts={recentPosts} />
           <TwitterTimeline />
-          <Scroll to="topJump" className={styles.topJump} smooth={true}>
-            Top
-          </Scroll>
         </div>
       </div>
       <div className={styles.endContent}>
@@ -157,6 +154,9 @@ const RenderPostsByCategorys = ({
           <BlogTagLink heading="Tag List" tags={tags} />
         </div>
       </div>
+      <Scroll to="topJump" className={styles.topJump} smooth={true}>
+        Top
+      </Scroll>
     </div>
   )
 }

@@ -56,7 +56,7 @@ const RenderPosts = ({
     <div className={styles.container}>
       <DocumentHead title="AllPost" />
       <div className={styles.flexWraper}>
-        <div className={styles.mainContent} id="topJump">
+        <div className={styles.mainContent}>
           <NoContents contents={posts} />
 
           {posts.map((post) => {
@@ -83,9 +83,6 @@ const RenderPosts = ({
           <BlogCategoryLink heading="Categorys" categorys={categorys} />
           <BlogTagLink heading="Tags" tags={tags} />
           <BlogPostLink heading="Recommended" posts={rankedPosts} />
-          <Scroll to="topJump" className={styles.topJump} smooth={true}>
-            Top
-          </Scroll>
         </div>
       </div>
       <div className={styles.endContent}>
@@ -100,6 +97,9 @@ const RenderPosts = ({
           <BlogTagLink heading="Tag List" tags={tags} />
         </div>
       </div>
+      <Scroll to="topJump" className={styles.topJump} smooth={true}>
+        Top
+      </Scroll>
     </div>
   )
 }

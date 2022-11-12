@@ -19,7 +19,7 @@ const Header = () => {
   ]
 
   return (
-    <header className={styles.header}>
+    <header className={styles.header} id="topJump">
       <h1>
         <Link href="/" passHref>
           <a>{SITE_TITLE}</a>

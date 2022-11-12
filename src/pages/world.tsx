@@ -61,7 +61,7 @@ const RenderWorld = ({ blocks, firstPost, posts = [], redirect }) => {
         urlOgImage={'japanglish-default.jpg'}
       />
 
-      <div className={styles.mainContent} id="topJump">
+      <div className={styles.mainContent}>
         <NotionBlocks blocks={blocks} />
 
         {posts.map((post) => {

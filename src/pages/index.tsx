@@ -16,7 +16,7 @@ export async function getStaticProps() {
 }
 
 const RenderPage = ({ blocks }) => (
-  <div className={styles.container} id="topJump">
+  <div className={styles.container}>
     <DocumentHead />
     <NotionBlocks blocks={blocks} />
     <Scroll to="topJump" className={styles.topJump} smooth={true}>

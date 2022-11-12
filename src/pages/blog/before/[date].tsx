@@ -93,7 +93,7 @@ const RenderPostsBeforeDate = ({
     <div className={styles.container}>
       <DocumentHead description={`Post before ${date.split('T')[0]}`} />
       <div className={styles.flexWraper}>
-        <div className={styles.mainContent} id="topJump">
+        <div className={styles.mainContent}>
           <header>
             <h2>Posts before {date.split('T')[0]}</h2>
           </header>
@@ -124,9 +124,6 @@ const RenderPostsBeforeDate = ({
           <BlogCategoryLink heading="Categorys" categorys={categorys} />
           <BlogTagLink heading="Tags" tags={tags} />
           <BlogPostLink heading="Recommended" posts={rankedPosts} />
-          <Scroll to="topJump" className={styles.topJump} smooth={true}>
-            Top
-          </Scroll>
         </div>
       </div>
       <div className={styles.endContent}>
@@ -141,6 +138,9 @@ const RenderPostsBeforeDate = ({
           <BlogTagLink heading="Tag List" tags={tags} />
         </div>
       </div>
+      <Scroll to="topJump" className={styles.topJump} smooth={true}>
+        Top
+      </Scroll>
     </div>
   )
 }
