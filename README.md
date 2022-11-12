@@ -98,11 +98,11 @@ yarn install
 yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) in your browser.
+In the development environment, non-published posts are also displayed to check their appearance.  
+But posts without valid `Slug` won't be displayed.
 
-Entries without `Published` are also displayed for preview in local. But no `Slug` entries are not displayed.
-
-Press `Ctrl+C` to stop local server in the terminal.
+4. Open [http://localhost:3000](http://localhost:3000) in your browser.
+5. Press `Ctrl+C` in the terminal to stop.
 
 ## How to deploy to Google Cloud Run
 
