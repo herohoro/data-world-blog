@@ -19,6 +19,7 @@ import {
   PostsNotFound,
   ShareUrl,
   PostPerson,
+  TwitterTimeline,
 } from '../../components/blog-parts'
 import SocialButtons from '../../components/social-buttons'
 import styles from '../../styles/blog.module.css'
@@ -138,46 +139,65 @@ const RenderPost = ({
         description={post.Excerpt}
         urlOgImage={post.OGImage}
       />
+      <div className={styles.flexWraper}>
+        <div className={styles.mainContent}>
+          <div className={styles.post}>
+            <PostCategory post={post} />
+            <PostDate post={post} />
+            <PostTags post={post} />
+            <PostTitle post={post} enableLink={false} />
+            <PostPerson post={post} />
 
-      <div className={styles.mainContent}>
-        <div className={styles.post}>
-          <PostCategory post={post} />
-          <PostDate post={post} />
-          <PostTags post={post} />
-          <PostTitle post={post} enableLink={false} />
-          <PostPerson post={post} />
+            <NoContents contents={blocks} />
+            <PostBody blocks={blocks} />
 
-          <NoContents contents={blocks} />
-          <PostBody blocks={blocks} />
+            <ShareUrl post={post} />
 
-          <ShareUrl post={post} />
+            <footer>
+              {NEXT_PUBLIC_URL && (
+                <SocialButtons
+                  title={post.Title}
+                  url={new URL(
+                    getBlogLink(post.Slug),
+                    NEXT_PUBLIC_URL
+                  ).toString()}
+                  id={post.Slug}
+                />
+              )}
+            </footer>
+          </div>
+        </div>
 
-          <footer>
-            {NEXT_PUBLIC_URL && (
-              <SocialButtons
-                title={post.Title}
-                url={new URL(
-                  getBlogLink(post.Slug),
-                  NEXT_PUBLIC_URL
-                ).toString()}
-                id={post.Slug}
-              />
-            )}
-          </footer>
+        <div className={styles.subContent}>
+          <BlogPostLink
+            heading="Posts in the same category"
+            posts={sameTagPosts}
+          />
+          <BlogCategoryLink heading="Categorys" categorys={categorys} />
+          <BlogTagLink heading="Tags" tags={tags} />
+          <BlogPostLink heading="Recommended" posts={rankedPosts} />
+          <BlogPostLink heading="Latest posts" posts={recentPosts} />
+          {/* <IndexList heading="★ MOKUJI ★" blocks={blocks} /> */}
+          <Toc />
         </div>
       </div>
 
-      <div className={styles.subContent}>
-        <BlogPostLink
-          heading="Posts in the same category"
-          posts={sameTagPosts}
-        />
-        <BlogCategoryLink heading="Categorys" categorys={categorys} />
-        <BlogTagLink heading="Tags" tags={tags} />
-        <BlogPostLink heading="Recommended" posts={rankedPosts} />
-        <BlogPostLink heading="Latest posts" posts={recentPosts} />
-        {/* <IndexList heading="★ MOKUJI ★" blocks={blocks} /> */}
-        <Toc />
+      <div className={styles.endContent}>
+        <div className={styles.endSection}>
+          <BlogPostLink heading="Posts in the same tag" posts={sameTagPosts} />
+          <BlogPostLink heading="Recommended" posts={rankedPosts} />
+        </div>
+        <div className={styles.endSection}>
+          <BlogPostLink heading="Latest posts" posts={recentPosts} />
+
+          <div className={styles.inlineCenter}>
+            <BlogCategoryLink heading="Category List" categorys={categorys} />
+          </div>
+        </div>
+        <div className={styles.endSection}>
+          <BlogTagLink heading="Tag List" tags={tags} />
+          <TwitterTimeline />
+        </div>
       </div>
     </div>
   )
