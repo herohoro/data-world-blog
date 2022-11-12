@@ -2,6 +2,7 @@ import React from 'react'
 import useSWR from 'swr'
 import axios from 'axios'
 import Toc from '../../components/toc'
+import { Link as Scroll } from 'react-scroll'
 import { NEXT_PUBLIC_URL } from '../../lib/notion/server-constants'
 import { Post } from '../../lib/notion/interfaces'
 import DocumentHead from '../../components/document-head'
@@ -140,7 +141,7 @@ const RenderPost = ({
         urlOgImage={post.OGImage}
       />
       <div className={styles.flexWraper}>
-        <div className={styles.mainContent}>
+        <div className={styles.mainContent} id="topJump">
           <div className={styles.post}>
             <PostCategory post={post} />
             <PostDate post={post} />
@@ -179,6 +180,9 @@ const RenderPost = ({
           <BlogPostLink heading="Latest posts" posts={recentPosts} />
           {/* <IndexList heading="★ MOKUJI ★" blocks={blocks} /> */}
           <Toc />
+          <Scroll to="topJump" className={styles.topJump} smooth={true}>
+            Top
+          </Scroll>
         </div>
       </div>
 
