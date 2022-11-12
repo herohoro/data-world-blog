@@ -18,6 +18,7 @@ import {
   PostsNotFound,
   ReadMoreLink,
   PostPerson,
+  TwitterTimeline,
 } from '../../../components/blog-parts'
 import styles from '../../../styles/blog.module.css'
 
@@ -91,38 +92,51 @@ const RenderPostsBeforeDate = ({
   return (
     <div className={styles.container}>
       <DocumentHead description={`Post before ${date.split('T')[0]}`} />
+      <div className={styles.flexWraper}>
+        <div className={styles.mainContent}>
+          <header>
+            <h2>Posts before {date.split('T')[0]}</h2>
+          </header>
 
-      <div className={styles.mainContent}>
-        <header>
-          <h2>Posts before {date.split('T')[0]}</h2>
-        </header>
+          <NoContents contents={posts} />
 
-        <NoContents contents={posts} />
+          {posts.map((post) => {
+            return (
+              <div className={styles.post} key={post.Slug}>
+                <PostCategory post={post} />
+                <PostDate post={post} />
+                <PostTags post={post} />
+                <PostTitle post={post} />
+                <PostPerson post={post} />
+                <PostExcerpt post={post} />
+                <ReadMoreLink post={post} />
+              </div>
+            )
+          })}
 
-        {posts.map((post) => {
-          return (
-            <div className={styles.post} key={post.Slug}>
-              <PostCategory post={post} />
-              <PostDate post={post} />
-              <PostTags post={post} />
-              <PostTitle post={post} />
-              <PostPerson post={post} />
-              <PostExcerpt post={post} />
-              <ReadMoreLink post={post} />
-            </div>
-          )
-        })}
+          <footer>
+            <NextBackPageLink firstPost={firstPost} posts={posts} />
+            <BackPageLink firstPost={firstPost} posts={posts} />
+          </footer>
+        </div>
 
-        <footer>
-          <NextBackPageLink firstPost={firstPost} posts={posts} />
-          <BackPageLink firstPost={firstPost} posts={posts} />
-        </footer>
+        <div className={styles.subContent}>
+          <BlogCategoryLink heading="Categorys" categorys={categorys} />
+          <BlogTagLink heading="Tags" tags={tags} />
+          <BlogPostLink heading="Recommended" posts={rankedPosts} />
+        </div>
       </div>
-
-      <div className={styles.subContent}>
-        <BlogCategoryLink heading="Categorys" categorys={categorys} />
-        <BlogTagLink heading="Tags" tags={tags} />
-        <BlogPostLink heading="Recommended" posts={rankedPosts} />
+      <div className={styles.endContent}>
+        <div className={styles.endSection}>
+          <BlogPostLink heading="Recommended" posts={rankedPosts} />
+        </div>
+        <div className={styles.endSection}>
+          <BlogCategoryLink heading="Category List" categorys={categorys} />
+          <TwitterTimeline />
+        </div>
+        <div className={styles.endSection}>
+          <BlogTagLink heading="Tag List" tags={tags} />
+        </div>
       </div>
     </div>
   )

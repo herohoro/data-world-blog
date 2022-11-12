@@ -17,6 +17,7 @@ import {
   PostsNotFound,
   ReadMoreLink,
   PostPerson,
+  TwitterTimeline,
 } from '../../../../../components/blog-parts'
 import styles from '../../../../../styles/blog.module.css'
 
@@ -103,39 +104,52 @@ const RenderPostsByTagBeforeDate = ({
   return (
     <div className={styles.container}>
       <DocumentHead description={`Posts in ${tag} before ${date}`} />
+      <div className={styles.flexWraper}>
+        <div className={styles.mainContent}>
+          <header>
+            <span style={{ marginRight: '1rem' }}>tag:</span>
+            <h2 style={{ marginLeft: '3rem' }}>{tag}</h2>
+          </header>
 
-      <div className={styles.mainContent}>
-        <header>
-          <span style={{ marginRight: '1rem' }}>tag:</span>
-          <h2 style={{ marginLeft: '3rem' }}>{tag}</h2>
-        </header>
+          <NoContents contents={posts} />
 
-        <NoContents contents={posts} />
+          {posts.map((post) => {
+            return (
+              <div className={styles.post} key={post.Slug}>
+                <PostCategory post={post} />
+                <PostDate post={post} />
+                <PostTags post={post} />
+                <PostTitle post={post} />
+                <PostPerson post={post} />
+                <PostExcerpt post={post} />
+                <ReadMoreLink post={post} />
+              </div>
+            )
+          })}
 
-        {posts.map((post) => {
-          return (
-            <div className={styles.post} key={post.Slug}>
-              <PostCategory post={post} />
-              <PostDate post={post} />
-              <PostTags post={post} />
-              <PostTitle post={post} />
-              <PostPerson post={post} />
-              <PostExcerpt post={post} />
-              <ReadMoreLink post={post} />
-            </div>
-          )
-        })}
+          <footer>
+            <NextPageLink firstPost={firstPost} posts={posts} tag={tag} />
+          </footer>
+        </div>
 
-        <footer>
-          <NextPageLink firstPost={firstPost} posts={posts} tag={tag} />
-        </footer>
+        <div className={styles.subContent}>
+          <BlogCategoryLink heading="Categorys" categorys={categorys} />
+          <BlogTagLink heading="Tags" tags={tags} />
+          <BlogPostLink heading="Recommended" posts={rankedPosts} />
+          <BlogPostLink heading="Latest Posts" posts={recentPosts} />
+        </div>
       </div>
-
-      <div className={styles.subContent}>
-        <BlogCategoryLink heading="Categorys" categorys={categorys} />
-        <BlogTagLink heading="Tags" tags={tags} />
-        <BlogPostLink heading="Recommended" posts={rankedPosts} />
-        <BlogPostLink heading="Latest Posts" posts={recentPosts} />
+      <div className={styles.endContent}>
+        <div className={styles.endSection}>
+          <BlogPostLink heading="Recommended" posts={rankedPosts} />
+        </div>
+        <div className={styles.endSection}>
+          <BlogCategoryLink heading="Category List" categorys={categorys} />
+          <TwitterTimeline />
+        </div>
+        <div className={styles.endSection}>
+          <BlogTagLink heading="Tag List" tags={tags} />
+        </div>
       </div>
     </div>
   )
