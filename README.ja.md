@@ -5,7 +5,7 @@
 [![GitHub stars](https://img.shields.io/github/stars/otoyo/easy-notion-blog)](https://github.com/otoyo/easy-notion-blog/stargazers)
 [![GitHub license](https://img.shields.io/github/license/otoyo/easy-notion-blog)](https://github.com/otoyo/easy-notion-blog/blob/master/LICENSE)
 
-![easy-notion-blog-logo-2](https://user-images.githubusercontent.com/1063435/155871688-aeb3a7ea-28cb-4b84-bcde-eafc7a2a859a.png)
+<img src="https://user-images.githubusercontent.com/1063435/201917958-432ebbcb-6960-4106-8fd2-9ddcd7539781.jpg" width="480">
 
 easy-notion-blog を使えば簡単にブログを開設できます。
 
@@ -51,11 +51,11 @@ easy-notion-blog を使えば簡単にブログを開設できます。
 
 ## クイックスタート
 
-1. このリポジトリを Star します😉
+1. このリポジトリを Star します 😉
 2. [テンプレート](https://www.notion.so/otoyo/158bd90116004cd19aca26ad88cb5c07?v=a20acca876c2428380e5a2a33db233ed) を自分の Notion へ複製します
 3. 複製したページの URL の次の部分を `DATABASE_ID` としてメモします
-    * `https://notion.so/your-account/<ココ>?v=xxxx`
-    * 例) `158bd90116004cd19aca26ad88cb5c07`
+   - `https://notion.so/your-account/<ココ>?v=xxxx`
+   - 例) `158bd90116004cd19aca26ad88cb5c07`
 4. [Create an integration](https://developers.notion.com/docs#step-1-create-an-integration) からインテグレーションを作成し "Internal Integration Token" を `NOTION_API_SECRET` としてメモします
 5. 複製したページを再度開き [Share a database with your integration](https://developers.notion.com/docs#step-1-create-an-integration) の手順でインテグレーションにデータベースを共有します
 6. [vercel.com](https://vercel.com/) にログインします
