@@ -3,5 +3,5 @@ export interface Post {
   Trans: string
   Ref: string
   EditedPerson: string
-  //   EditedDate: string
+  EditedDate: string
 }
