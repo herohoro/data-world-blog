@@ -6,6 +6,7 @@ import Link from 'next/link'
 //   TwitterTimeline,
 // } from '../../components/blog-parts'
 import styles from '../../styles/blog.module.css'
+import SubmitForm from '../../components/submit'
 import {
   getPosts,
   getFirstPost,
@@ -47,48 +48,7 @@ const RenderPostsSpace = ({
   return (
     <div className={styles.container}>
       <DocumentHead title="Space" />
-      <div className={SubmitStyles.subsec}>
-        <div className={SubmitStyles.box}>
-          <div className={SubmitStyles.form}>
-            <h3> Everyone's Words</h3>
-            <div className={SubmitStyles.inputBox}>
-              <div className={SubmitStyles.input}>
-                {/* <input className={SubmitStyles.text}> */}
-                {/* required="required"をReact版にして修正予定 */}
-                <span>Original text</span>
-                <i></i>
-                {/* </input> */}
-              </div>
-            </div>
-            <div className={SubmitStyles.inputBox}>
-              <div className={SubmitStyles.input}>
-                {/* <input type="question"> */}
-                {/* required="required"をReact版にして修正予定 */}
-                <span>Fill-in-the-blank translation</span>
-                <i></i>
-                {/* </input> */}
-              </div>
-            </div>
-            <div className={SubmitStyles.inputBox}>
-              <div className={SubmitStyles.input}>
-                {/* <input type="question"> */}
-                {/* required="required"をReact版にして修正予定 */}
-                <span>Your Name</span>
-                <i></i>
-                {/* </input> */}
-              </div>
-            </div>
-            <div className={SubmitStyles.submit}>
-              <span>submit</span>
-            </div>
-            {/* <input
-              className={SubmitStyles.submit}
-              type="submit"
-              value="Login"
-            ></input> */}
-          </div>
-        </div>
-      </div>
+      <SubmitForm id={''} text={''} trans={''} urname={''} />
       <div className={styles.flexWraper}>
         <div className={styles.mainContent}>
           <h4> Staging now.....</h4>
