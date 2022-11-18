@@ -15,7 +15,7 @@ const SubmitForm = (props: Props) => {
   //   const [active, setActive] = useState(false)
   const [text, setText] = useState('')
   const [trans, setTrans] = useState('')
-  const [urname, seturname] = useState('')
+  const [urname, setUrname] = useState('')
 
   //   const handleClick = () => {
   // if (!active) {
@@ -50,13 +50,21 @@ const SubmitForm = (props: Props) => {
             <div className={SubmitStyles.inputBox}>
               <label>
                 Translation:
-                <textarea className={SubmitStyles.input} value={trans} />
+                <textarea
+                  className={SubmitStyles.input}
+                  value={trans}
+                  onChange={(e) => setTrans(e.target.value)}
+                />
               </label>
             </div>
             <div className={SubmitStyles.inputBox}>
               <label>
                 Your name:
-                <input className={SubmitStyles.input} value={urname} />
+                <input
+                  className={SubmitStyles.input}
+                  value={urname}
+                  onChange={(e) => setUrname(e.target.value)}
+                />
               </label>
             </div>
             <button className={SubmitStyles.submit}>submit</button>
