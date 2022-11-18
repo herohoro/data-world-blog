@@ -14,9 +14,20 @@ const SubmitForm = (props: Props) => {
   //   const [count, setCount] = useState('')
   //   const [active, setActive] = useState(false)
   const [text, setText] = useState('')
+  const [addText, setAddText] = useState('')
   const [trans, setTrans] = useState('')
+  const [addTrans, setAddTrans] = useState('')
   const [urname, setUrname] = useState('')
+  const [addUrname, setAddUrname] = useState('')
 
+  const onClickSubmit = () => {
+    setText('')
+    setAddText(text)
+    setTrans('')
+    setAddTrans(trans)
+    setUrname('')
+    setAddUrname(urname)
+  }
   //   const handleClick = () => {
   // if (!active) {
   //   axios.put(`/api/like?slug=${props.id}`, {})
@@ -67,7 +78,12 @@ const SubmitForm = (props: Props) => {
                 />
               </label>
             </div>
-            <button className={SubmitStyles.submit}>submit</button>
+            <button className={SubmitStyles.submit} onClick={onClickSubmit}>
+              submit
+            </button>
+            <p>Text送信：{addText}</p>
+            <p>Trans送信：{addTrans}</p>
+            <p>Urname送信：{addUrname}</p>
           </div>
         </div>
       </div>
