@@ -1,10 +1,5 @@
 import DocumentHead from '../../components/document-head'
-import Link from 'next/link'
-// import {
-//   BlogTagLink,
-//   BlogCategoryLink,
-//   TwitterTimeline,
-// } from '../../components/blog-parts'
+
 import styles from '../../styles/blog.module.css'
 import SubmitForm from '../../components/submit'
 import {
@@ -16,7 +11,6 @@ import {
 import { getEditedDate } from '../../lib/blog-helpers'
 import SubmitStyles from '../../styles/submit.module.css'
 import { getAllSubmitPosts } from '../../lib/submit_form/client'
-// import Image from 'next/image'
 
 export async function getStaticProps() {
   const posts = await getPosts()

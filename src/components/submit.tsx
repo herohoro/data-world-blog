@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import axios from 'axios'
+
 import styles from '../styles/submit.module.css'
-import SubmitStyles from '../styles/submit.module.css'
 
 const SubmitForm = () => {
   const [text, setText] = useState('')
@@ -29,41 +29,41 @@ const SubmitForm = () => {
 
   return (
     <>
-      <div className={SubmitStyles.subsec}>
-        <div className={SubmitStyles.box}>
-          <div className={SubmitStyles.form}>
-            <h3> Everyone's Words</h3>
-            <div className={SubmitStyles.inputBox}>
+      <div className={styles.subsec}>
+        <div className={styles.box}>
+          <div className={styles.form}>
+            <h3> Everyone&apos;s Words</h3>
+            <div className={styles.inputBox}>
               <label>
                 Text:
                 <textarea
-                  className={SubmitStyles.input}
+                  className={styles.input}
                   value={text}
                   onChange={(e) => setText(e.target.value)}
                 />
               </label>
             </div>
-            <div className={SubmitStyles.inputBox}>
+            <div className={styles.inputBox}>
               <label>
                 Translation:
                 <textarea
-                  className={SubmitStyles.input}
+                  className={styles.input}
                   value={trans}
                   onChange={(e) => setTrans(e.target.value)}
                 />
               </label>
             </div>
-            <div className={SubmitStyles.inputBox}>
+            <div className={styles.inputBox}>
               <label>
                 Your name:
                 <input
-                  className={SubmitStyles.input}
+                  className={styles.input}
                   value={urname}
                   onChange={(e) => setUrname(e.target.value)}
                 />
               </label>
             </div>
-            <button className={SubmitStyles.submit} onClick={onClickSubmit}>
+            <button className={styles.submit} onClick={onClickSubmit}>
               submit
             </button>
             <p>Text送信：{addText}</p>
