@@ -1,6 +1,6 @@
 import { useRouter } from 'next/router'
-import { NUMBER_OF_POSTS_PER_PAGE } from '../lib/notion/server-constants'
-import DocumentHead from '../components/document-head'
+import { NUMBER_OF_POSTS_PER_PAGE } from '../../lib/notion/server-constants'
+import DocumentHead from '../../components/document-head'
 import {
   PostDate,
   PostExcerpt,
@@ -11,20 +11,20 @@ import {
   NextPageLink,
   ReadMoreLink,
   PostPerson,
-} from '../components/blog-parts'
+} from '../../components/blog-parts'
 
 import styles from '../styles/world.module.css'
 import partsStyles from '../styles/blog-parts.module.css'
 // import { getCategoryLink } from '../lib/blog-helpers'
 import { useEffect } from 'react'
 import { Link as Scroll } from 'react-scroll'
-import { TEROBI_PAGE_ID } from '../lib/notion/server-constants'
-import NotionBlocks from '../components/notion-block'
+import { TEROBI_PAGE_ID } from '../../lib/notion/server-constants'
+import NotionBlocks from '../../components/notion-block'
 import {
   getAllBlocksByBlockId,
   getPostsByCategory,
   getFirstPostByCategory,
-} from '../lib/notion/client'
+} from '../../lib/notion/client'
 
 export async function getStaticProps() {
   const posts = await getPostsByCategory('WORLD', NUMBER_OF_POSTS_PER_PAGE)
