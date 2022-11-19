@@ -48,7 +48,7 @@ const RenderPostsSpace = ({
   return (
     <div className={styles.container}>
       <DocumentHead title="Space" />
-      <SubmitForm id={''} text={''} trans={''} urname={''} />
+      <SubmitForm />
       <div className={styles.flexWraper}>
         <div className={styles.mainContent}>
           <h4> Staging now.....</h4>
