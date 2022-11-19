@@ -13,8 +13,8 @@ import {
   PostPerson,
 } from '../../components/blog-parts'
 
-import styles from '../styles/world.module.css'
-import partsStyles from '../styles/blog-parts.module.css'
+import styles from '../../styles/world.module.css'
+import partsStyles from '../../styles/blog-parts.module.css'
 // import { getCategoryLink } from '../lib/blog-helpers'
 import { useEffect } from 'react'
 import { Link as Scroll } from 'react-scroll'
