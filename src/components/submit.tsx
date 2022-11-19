@@ -3,16 +3,7 @@ import axios from 'axios'
 import styles from '../styles/submit.module.css'
 import SubmitStyles from '../styles/submit.module.css'
 
-type Props = {
-  id: string
-  text: string
-  trans: string
-  urname: string
-}
-
-const SubmitForm = (props: Props) => {
-  //   const [count, setCount] = useState('')
-  //   const [active, setActive] = useState(false)
+const SubmitForm = () => {
   const [text, setText] = useState('')
   const [addText, setAddText] = useState('')
   const [trans, setTrans] = useState('')
@@ -25,25 +16,19 @@ const SubmitForm = (props: Props) => {
     setAddText(text)
     setTrans('')
     setAddTrans(trans)
+
     setUrname('')
     setAddUrname(urname)
+    const apiPost = {
+      Text: text,
+      Trans: trans,
+      EditedPerson: urname,
+    }
+    axios.post(`/api/submit`, apiPost)
   }
-  //   const handleClick = () => {
-  // if (!active) {
-  //   axios.put(`/api/like?slug=${props.id}`, {})
-  //   setActive(true)
-  //   setCount(count + 1)
-  // }
-  //   }
 
   return (
     <>
-      {/* <button className={styles.likeButton} onClick={handleClick}>
-        <p>へろちゃんへsubmit 🚀</p>
-        <Heart width={32} height={32} active={active} />
-        <div className={styles.likeCount}>{count === null ? 0 : count} </div>
-      </button> */}
-
       <div className={SubmitStyles.subsec}>
         <div className={SubmitStyles.box}>
           <div className={SubmitStyles.form}>

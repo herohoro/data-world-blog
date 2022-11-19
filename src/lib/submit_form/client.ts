@@ -35,6 +35,73 @@ export async function getAllSubmitPosts() {
 
   return results.map((item) => _buildPost(item))
 }
+// "parent": {
+//   "type": "database_id",
+//   "database_id": "d9824bdc-8445-4327-be8b-5b47500af6ce"
+// },
+// "properties": {
+//   "Name": {
+//       "title": [
+//           {
+//               "text": {
+//                   "content": "Tuscan kale"
+//               }
+//           }
+//       ]
+//   },
+//   "Description": {
+//       "rich_text": [
+//           {
+//               "text": {
+//                   "content": "A dark green leafy vegetable"
+//               }
+//           }
+//       ]
+//   },
+
+export async function submitPost(submitData: Post) {
+  const result = await client.pages.create({
+    parent: {
+      database_id: SUBMIT_DATABASE_ID,
+    },
+
+    properties: {
+      Text: {
+        title: [
+          {
+            text: {
+              content: submitData.Text,
+            },
+          },
+        ],
+      },
+      Trans: {
+        rich_text: [
+          {
+            text: {
+              content: submitData.Trans,
+            },
+          },
+        ],
+      },
+      EditedPerson: {
+        rich_text: [
+          {
+            text: {
+              content: submitData.EditedPerson,
+            },
+          },
+        ],
+      },
+    },
+  })
+
+  if (!result) {
+    return null
+  }
+
+  return _buildPost(result)
+}
 
 function _buildPost(data) {
   const prop = data.properties
