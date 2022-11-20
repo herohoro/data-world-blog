@@ -17,23 +17,27 @@ const SubmitForm = () => {
   const [preUrname, setPreUrname] = useState('')
 
   const [preMessage, setPreMessage] = useState('')
-  const [preMessageTitle, setPreMessageTitle] = useState('')
+
+  const [addPras, setAddPras] = useState('')
+  const [addStage, setAddStage] = useState('')
 
   const onCheckPreview = () => {
     setPreText(text)
     setPreTrans(trans)
     setPreUrname(urname)
     setPreMessage('🐣 OK??   Go to submit ▼')
-    setPreMessageTitle('＼ みんなの単語帳 ／')
   }
   const onClickSubmit = () => {
     setText('')
     setAddText(text)
     setTrans('')
     setAddTrans(trans)
-
     setUrname('')
     setAddUrname(urname)
+    setAddPras(' + ')
+    setAddStage(
+      'When you refresh the page, the following cards will be added !!'
+    )
     const apiPost = {
       Text: text,
       Trans: trans,
@@ -88,7 +92,7 @@ const SubmitForm = () => {
               <div className={styles.previewSec}>
                 <h4>Preview：</h4>
                 <div className={styles.previewBox}>
-                  <p>{preMessageTitle}</p>
+                  <p>＼ みんなの単語帳 ／</p>
                   <p>{preText}</p>
                   <p>意味：{preTrans}</p>
                   <p style={{ color: '#45f3ff', fontSize: '0.8em' }}>
@@ -101,6 +105,16 @@ const SubmitForm = () => {
                 <button className={styles.submit} onClick={onClickSubmit}>
                   submit
                 </button>
+                <p>
+                  {addText}
+                  {addPras}
+                  {addTrans}
+                  {addPras}
+                  {addUrname}
+                </p>
+                <p style={{ color: '#d932ff', fontSize: '1.2em' }}>
+                  {addStage}
+                </p>
               </div>
             </div>
           </div>
