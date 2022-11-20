@@ -25,10 +25,15 @@
   min-height: 80vh;
   background: #162a9b50;
 }
+.flexWraper {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
 .box {
   position: relative;
-  width: 380px;
-  height: 800px;
+  width: 100%;
+  /* height: 500px; */
   background: #1c1c1c;
   border-radius: 8px;
   overflow: hidden;
@@ -38,8 +43,8 @@
   position: absolute;
   top: -50%;
   left: -50%;
-  width: 380px;
-  height: 800px;
+  width: 100%;
+  height: 500px;
   background: linear-gradient(0deg, transparent, #45f3ff, #45f3ff);
   transform-origin: bottom right;
   animation: animate 6s linear infinite;
@@ -49,8 +54,8 @@
   position: absolute;
   top: -50%;
   left: -50%;
-  width: 380px;
-  height: 800px;
+  width: 100%;
+  height: 500px;
   background: linear-gradient(0deg, transparent, #45f3ff, #45f3ff);
   transform-origin: bottom right;
   animation: animate 6s linear infinite;
@@ -65,6 +70,16 @@
     transform: rotate(360deg);
   }
 }
+.rollArea {
+  position: relative;
+  width: 99%;
+  /* height: 490px; */
+  background: #1c1c1c;
+  border-radius: 8px;
+  overflow: hidden;
+  margin: 5px;
+  z-index: 10;
+}
 /* input クラスはReact版にでき次第変更予定 */
 .input {
   background: #8d8c8c66;
@@ -72,17 +87,24 @@
   padding: 10px;
   color: rgba(20, 251, 216, 0.925);
 }
-.form {
-  position: absolute;
+.form,
+.previewSec {
+  /* position: absolute; */
+  position: relative;
   inset: 2px;
   border-radius: 8px;
   background: #28292d;
-  z-index: 10;
+  /* z-index: 10; */
   padding: 50px 40px;
-  display: flex;
-  flex-direction: column;
+  width: 40%;
+  /* display: flex; */
+  /* flex-direction: column; */
 }
-.form h3 {
+.previewBox {
+  background: #699df86b;
+  padding: 20px;
+}
+.box h3 {
   color: #45f3ff;
   font-weight: line box;
   text-align: center;
@@ -91,13 +113,19 @@
 }
 .inputBox {
   position: relative;
-  width: 300px;
-  /* margin-top: 35px; */
+}
+.input {
+  width: 100%;
+}
+.lavel > p {
+  margin: 0;
+}
+.lavel {
+  box-sizing: border-box;
 }
 .inputBox .input {
   position: relative;
-  width: 100%;
-  padding: 20px 10px 10px;
+  box-sizing: border-box;
   /* background: transparent; */
   /* border: none; */
   /* outline: none; */
@@ -116,11 +144,13 @@
   transition: 0.5s;
 } */
 
-.submit {
+.submit,
+.preview {
   margin: 20px;
   text-align: center;
   background: #eaeaea;
   color: rgb(102, 62, 10);
   padding: 10px;
   border-radius: 8px;
+  width: 80%;
 }
