@@ -1,5 +1,5 @@
 .grid {
-  margin-top: 50px;
+  /* margin-top: 50px; */
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -87,15 +87,21 @@
   padding: 10px;
   color: rgba(20, 251, 216, 0.925);
 }
+.form {
+  border-radius: 8px 0 0 8px;
+}
+.previewSec {
+  border-radius: 0 8px 8px 0;
+}
 .form,
 .previewSec {
   /* position: absolute; */
   position: relative;
   inset: 2px;
-  border-radius: 8px;
+
   background: #28292d;
   /* z-index: 10; */
-  padding: 50px 40px;
+  padding: 50px 40px 0;
   width: 40%;
   /* display: flex; */
   /* flex-direction: column; */
@@ -147,10 +153,37 @@
 .submit,
 .preview {
   margin: 20px;
-  text-align: center;
   background: #eaeaea;
   color: rgb(102, 62, 10);
   padding: 10px;
   border-radius: 8px;
-  width: 80%;
+  width: 70%;
+}
+
+@media (max-width: 800px) {
+  .form,
+  .previewSec {
+    width: 90%;
+  }
+  .form {
+    padding-bottom: 0px;
+    border-radius: 8px 8px 0 0;
+  }
+  .previewSec {
+    padding-top: 0px;
+    border-radius: 0 0 8px 8px;
+  }
+  .rollArea {
+    width: 97%;
+  }
+  .box::after,
+  .box::before {
+    height: 1000px;
+  }
+}
+
+@media (max-width: 800px) {
+  .card {
+    width: 90%;
+  }
 }

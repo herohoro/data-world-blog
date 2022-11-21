@@ -45,7 +45,7 @@ const RenderPostsSpace = ({
       <SubmitForm />
       <div className={styles.flexWraper}>
         <div className={styles.mainContent}>
-          <h4> Staging now.....</h4>
+          <h4 style={{ textAlign: 'center' }}> &#x2b07; Staging now.....</h4>
           <div className={SubmitStyles.grid}>
             {submitPosts.map((submitPost) => {
               return (
@@ -71,6 +71,13 @@ const RenderPostsSpace = ({
               )
             })}
           </div>
+          <h4
+            style={{ textAlign: 'center', color: '#d932ff', fontSize: '0.8em' }}
+          >
+            {' '}
+            I&apos;ll check and this vocabulary list will disappear from the
+            list.
+          </h4>
         </div>
       </div>
     </div>

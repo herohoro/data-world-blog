@@ -84,9 +84,11 @@ const SubmitForm = () => {
                     />
                   </label>
                 </div>
-                <button className={styles.preview} onClick={onCheckPreview}>
-                  Preview
-                </button>
+                <div style={{ textAlign: 'center' }}>
+                  <button className={styles.preview} onClick={onCheckPreview}>
+                    Preview
+                  </button>
+                </div>
               </div>
 
               <div className={styles.previewSec}>
@@ -95,16 +97,24 @@ const SubmitForm = () => {
                   <p>＼ みんなの単語帳 ／</p>
                   <p>{preText}</p>
                   <p>意味：{preTrans}</p>
-                  <p style={{ color: '#45f3ff', fontSize: '0.8em' }}>
+                  <p
+                    style={{
+                      color: '#45f3ff',
+                      fontSize: '0.8em',
+                      lineHeight: '1.2em',
+                    }}
+                  >
                     {' '}
                     &#9839;{preUrname}_ひよこ &#9839;日本語 &#9839;English
                     &#9839;世界の言葉
                   </p>
                 </div>
                 <p>{preMessage}</p>
-                <button className={styles.submit} onClick={onClickSubmit}>
-                  submit
-                </button>
+                <div style={{ textAlign: 'center' }}>
+                  <button className={styles.submit} onClick={onClickSubmit}>
+                    submit
+                  </button>
+                </div>
                 <p>
                   {addText}
                   {addPras}
