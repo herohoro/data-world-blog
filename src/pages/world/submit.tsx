@@ -75,7 +75,8 @@ const RenderPostsSpace = ({
             style={{ textAlign: 'center', color: '#d932ff', fontSize: '0.8em' }}
           >
             {' '}
-            I'll check and this vocabulary list will disappear from the list.
+            I&apos;ll check and this vocabulary list will disappear from the
+            list.
           </h4>
         </div>
       </div>
