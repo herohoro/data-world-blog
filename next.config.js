@@ -3,12 +3,12 @@ const path = require('path')
 const {
   NOTION_API_SECRET,
   DATABASE_ID,
-} = require('./src/lib/notion/server-constants')
+} = require('./lib/notion/server-constants')
 
 const warnOrError =
   process.env.NODE_ENV !== 'production' || process.env.GITHUB_ACTIONS
     ? console.warn
-    : msg => {
+    : (msg) => {
         throw new Error(msg)
       }
 
