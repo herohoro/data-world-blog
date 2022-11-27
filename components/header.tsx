@@ -16,6 +16,7 @@ const Header = () => {
     { label: 'Home', path: '/' },
     { label: 'AllPost', path: '/blog' },
     { label: 'WORLD', path: '/world' },
+    { label: '単語帳', path: '/world/submit' },
   ]
 
   return (
