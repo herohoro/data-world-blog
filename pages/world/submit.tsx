@@ -66,8 +66,8 @@ const RenderPostsSpace = ({
                     }}
                   >
                     {' '}
-                    &#9839;{submitPost.EditedPerson}_ひよこ &#9839;日本語
-                    &#9839;English &#9839;世界の言葉
+                    #{submitPost.EditedPerson}_ひよこ #日本語 #English
+                    #世界の言葉
                   </p>
                   <hr />
                   <p>書いた人：{submitPost.EditedPerson}</p>
