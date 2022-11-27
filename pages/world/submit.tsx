@@ -51,16 +51,26 @@ const RenderPostsSpace = ({
               return (
                 <div className={SubmitStyles.card} key={submitPost.text}>
                   <div>
-                    <p>&#92; &#x1f40d; みんなで英単語 &#47;</p>
+                    <p>&#92; &#x1f40d; みんなの単語帳 &#47;</p>
 
                     <p>{submitPost.Text}</p>
                   </div>
 
                   <p>意味： {submitPost.Trans ? submitPost.Trans : null}</p>
                   <p>参照：{submitPost.Ref ? submitPost.Ref : null}</p>
+                  <p
+                    style={{
+                      color: '#45f3ff',
+                      fontSize: '0.8em',
+                      lineHeight: '1.2em',
+                    }}
+                  >
+                    {' '}
+                    &#9839;{submitPost.EditedPerson}_ひよこ &#9839;日本語
+                    &#9839;English &#9839;世界の言葉
+                  </p>
                   <hr />
                   <p>書いた人：{submitPost.EditedPerson}</p>
-
                   <p>
                     last edit :{' '}
                     {submitPost.EditedDate
