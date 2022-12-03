@@ -26,8 +26,7 @@ import {
 import { Link as Scroll } from 'react-scroll'
 
 export const revalidate = 60
-// TODO: Enable after fixed https://github.com/vercel/next.js/issues/43357
-// export const dynamicParams = false
+export const dynamicParams = false
 
 export async function generateStaticParams() {
   const tags = await getAllTags()
