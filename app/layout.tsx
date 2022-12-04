@@ -4,18 +4,12 @@ import '../styles/global.css'
 import '../styles/syntax-coloring.css'
 import styles from '../styles/shared.module.css'
 
-const RootLayout = ({
-  children,
-}: {
-  children: React.ReactNode,
-}) => (
-  <html lang="ja">
+const RootLayout = ({ children }: { children: React.ReactNode }) => (
+  <html lang="en">
     <body>
       <div className={styles.container}>
         <Header />
-        <div className={styles.content}>
-          {children}
-        </div>
+        <div className={styles.content}>{children}</div>
         <Footer />
       </div>
     </body>
