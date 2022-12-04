@@ -23,7 +23,6 @@ import {
   getAllCategorys,
 } from '../../lib/notion/client'
 import { Link as Scroll } from 'react-scroll'
-import DocumentHead from '../../components/document-head'
 
 export const revalidate = 60
 
@@ -38,7 +37,6 @@ const BlogPage = async () => {
 
   return (
     <div className={styles.container}>
-      <DocumentHead title="AllPost" />
       <div className={styles.flexWraper}>
         <div className={styles.mainContent}>
           <NoContents contents={posts} />
