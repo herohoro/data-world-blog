@@ -15,6 +15,8 @@ import {
   PostPerson,
   TwitterTimeline,
 } from '../../../../../../components/blog-parts'
+import { NextBackPageLink } from '../../../../../../components/nextbackpage'
+
 import {
   getPosts,
   getRankedPosts,
@@ -76,6 +78,7 @@ const BlogTagBeforeDatePage = async ({
           })}
 
           <footer>
+            <NextBackPageLink firstPost={firstPost} posts={posts} />
             <NextPageLink firstPost={firstPost} posts={posts} tag={tag} />
           </footer>
         </div>

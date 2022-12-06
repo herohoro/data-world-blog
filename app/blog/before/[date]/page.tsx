@@ -11,8 +11,6 @@ import {
   BlogPostLink,
   BlogTagLink,
   BlogCategoryLink,
-  BackPageLink,
-  NextBackPageLink,
   NoContents,
   PostDate,
   PostExcerpt,
@@ -23,6 +21,8 @@ import {
   PostPerson,
   TwitterTimeline,
 } from '../../../../components/blog-parts'
+import { NextBackPageLink } from '../../../../components/nextbackpage'
+import { BackPageLink } from '../../../../components/backpage'
 import styles from '../../../../styles/blog.module.css'
 import TopJump from '../../../../components/top-jamp'
 

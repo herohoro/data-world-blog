@@ -1,13 +1,10 @@
-import { useRouter } from 'next/router'
-import { NUMBER_OF_POSTS_PER_PAGE } from '../../lib/notion/server-constants'
-import DocumentHead from '../../components/document-head'
+import { NUMBER_OF_POSTS_PER_PAGE } from '../../app/server-constants'
 import {
   PostDate,
   PostExcerpt,
   PostTags,
   PostCategory,
   PostTitle,
-  PostsNotFound,
   NextPageLink,
   ReadMoreLink,
   PostPerson,
@@ -15,52 +12,25 @@ import {
 
 import styles from '../../styles/world.module.css'
 import partsStyles from '../../styles/blog-parts.module.css'
-// import { getCategoryLink } from '../lib/blog-helpers'
-import { useEffect } from 'react'
-import { Link as Scroll } from 'react-scroll'
-import { TEROBI_PAGE_ID } from '../../lib/notion/server-constants'
+import { TEROBI_PAGE_ID } from '../../app/server-constants'
 import NotionBlocks from '../../components/notion-block'
 import {
   getAllBlocksByBlockId,
   getPostsByCategory,
   getFirstPostByCategory,
 } from '../../lib/notion/client'
+import TopJump from '../../components/top-jamp'
 
-export async function getStaticProps() {
-  const posts = await getPostsByCategory('WORLD', NUMBER_OF_POSTS_PER_PAGE)
-  const blocks = await getAllBlocksByBlockId(TEROBI_PAGE_ID)
-  const firstPost = await getFirstPostByCategory('WORLD')
+export const revalidate = 60
 
-  return {
-    props: {
-      blocks,
-      posts,
-      firstPost,
-    },
-    revalidate: 60,
-  }
-}
-
-const RenderWorld = ({ blocks, firstPost, posts = [], redirect }) => {
-  const router = useRouter()
-
-  useEffect(() => {
-    if (redirect && posts.length === 0) {
-      router.replace(redirect)
-    }
-  }, [router, redirect, posts])
-
-  if (!posts) {
-    return <PostsNotFound />
-  }
-
+const WorldPage = async () => {
+  const [posts, blocks, firstPost] = await Promise.all([
+    getPostsByCategory('WORLD', NUMBER_OF_POSTS_PER_PAGE),
+    getAllBlocksByBlockId(TEROBI_PAGE_ID),
+    getFirstPostByCategory('WORLD'),
+  ])
   return (
     <div className={styles.container}>
-      <DocumentHead
-        description="WORLD_study-friends"
-        urlOgImage={'japanglish-default.jpg'}
-      />
-
       <div className={styles.mainContent}>
         <NotionBlocks blocks={blocks} />
 
@@ -198,10 +168,8 @@ const RenderWorld = ({ blocks, firstPost, posts = [], redirect }) => {
           // charset="utf-8"
         ></script>
       </div>
-      <Scroll to="topJump" className={styles.topJump} smooth={true}>
-        Top
-      </Scroll>
+      <TopJump />
     </div>
   )
 }
-export default RenderWorld
+export default WorldPage
