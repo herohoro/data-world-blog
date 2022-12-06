@@ -22,7 +22,7 @@ import {
   getAllTags,
   getAllCategorys,
 } from '../../lib/notion/client'
-import { Link as Scroll } from 'react-scroll'
+import TopJump from '../../components/top-jamp'
 
 export const revalidate = 60
 
@@ -79,9 +79,7 @@ const BlogPage = async () => {
           <BlogTagLink heading="Tag List" tags={tags} />
         </div>
       </div>
-      <Scroll to="topJump" className={styles.topJump} smooth={true}>
-        Top
-      </Scroll>
+      <TopJump />
     </div>
   )
 }

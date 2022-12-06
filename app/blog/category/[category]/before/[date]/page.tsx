@@ -25,7 +25,7 @@ import {
   getAllCategorys,
 } from '../../../../../../lib/notion/client'
 import styles from '../../../../../../styles/blog.module.css'
-import { Link as Scroll } from 'react-scroll'
+import TopJump from '../../../../../../components/top-jamp'
 
 export const revalidate = 3600
 
@@ -105,9 +105,7 @@ const BlogCategoryBeforeDatePage = async ({
           <BlogTagLink heading="Tag List" tags={tags} />
         </div>
       </div>
-      <Scroll to="topJump" className={styles.topJump} smooth={true}>
-        Top
-      </Scroll>
+      <TopJump />
     </div>
   )
 }

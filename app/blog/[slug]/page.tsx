@@ -28,8 +28,8 @@ import {
   getAllCategorys,
   getAllBlocksByBlockId,
 } from '../../../lib/notion/client'
-import { Link as Scroll } from 'react-scroll'
 import Toc from '../../../components/toc'
+import TopJump from '../../../components/top-jamp'
 
 export const revalidate = 30
 export const dynamicParams = false
@@ -122,9 +122,7 @@ const BlogSlugPage = async ({ params: { slug } }) => {
           <TwitterTimeline />
         </div>
       </div>
-      <Scroll to="topJump" className={styles.topJump} smooth={true}>
-        Top
-      </Scroll>
+      <TopJump />
     </div>
   )
 }
