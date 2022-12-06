@@ -1,6 +1,5 @@
-import React from 'react'
 import Link from 'next/link'
-import { useRouter } from 'next/router'
+import React from 'react'
 import { Post } from '../lib/notion/interfaces'
 import NotionBlocks from './notion-block'
 import MokujiBlocks from './mokuji-block'
@@ -65,9 +64,7 @@ export const PostTitle = ({ post, enableLink = true }) => {
   return (
     <h3 className={styles.postTitle}>
       {enableLink ? (
-        <Link href="/blog/[slug]" as={getBlogLink(post.Slug)} passHref>
-          <a>{postTitle}</a>
-        </Link>
+        <Link href={getBlogLink(post.Slug)}>{postTitle}</Link>
       ) : (
         postTitle
       )}
@@ -80,8 +77,8 @@ export const PostTags = ({ post }) => (
     {post.Tags &&
       post.Tags.length > 0 &&
       post.Tags.map((tag: string) => (
-        <Link href="/blog/tag/[tag]" as={getTagLink(tag)} key={tag} passHref>
-          <a>{tag}</a>
+        <Link href={getTagLink(tag)} key={tag}>
+          {tag}
         </Link>
       ))}
   </div>
@@ -91,12 +88,7 @@ export const PostCategory = ({ post }) => (
     {/* <span className={styles.postCategory}>
       {post.Category ? post.Category : ''}
     </span> */}
-    <Link
-      href="/blog/category/[category]"
-      as={getCategoryLink(post.Category)}
-      key={post.Category}
-      passHref
-    >
+    <Link href={getCategoryLink(post.Category)} key={post.Category}>
       <span className={styles.postCategory}>
         {post.Category ? post.Category : ''}
       </span>
@@ -129,8 +121,8 @@ export const ReadMoreLink = ({ post }) => (
   <div className={styles.readMoreLink}>
     <div className={styles.box}>
       <span>
-        <Link href="/blog/[slug]" as={getBlogLink(post.Slug)} passHref>
-          <a className={styles.readMore}>Read more</a>
+        <Link href={getBlogLink(post.Slug)} className={styles.readMore}>
+          Read more
         </Link>
       </span>
     </div>
@@ -150,87 +142,14 @@ export const NextPageLink = ({ firstPost, posts, tag = '', category = '' }) => {
       <Link
         href={
           tag
-            ? '/blog/tag/[tag]/before/[date]'
-            : category
-            ? '/blog/category/[category]/before/[date]'
-            : '/blog/before/[date]'
-        }
-        as={
-          tag
             ? getTagBeforeLink(tag, lastPost.Date)
             : category
             ? getCategoryBeforeLink(category, lastPost.Date)
             : getBeforeLink(lastPost.Date)
         }
-        passHref
       >
-        <a>Find more articles ＞</a>
+        Find more articles ＞
       </Link>
-    </div>
-  )
-}
-export const NextBackPageLink = ({
-  firstPost,
-  posts,
-  tag = '',
-  category = '',
-}) => {
-  const router = useRouter()
-  if (!firstPost) return null
-  if (posts.length === 0) return null
-
-  const lastPost = posts[posts.length - 1]
-
-  if (firstPost.Date === lastPost.Date) return null
-
-  return (
-    <div className={styles.nextContainer}>
-      <div className={styles.buttonSubContainer}>
-        <a className={styles.backButton} onClick={() => router.back()}>
-          {' '}
-          ＜ New{' '}
-        </a>
-        <Link
-          href={
-            tag
-              ? '/blog/tag/[tag]/before/[date]'
-              : category
-              ? '/blog/category/[category]/before/[date]'
-              : '/blog/before/[date]'
-          }
-          as={
-            tag
-              ? getTagBeforeLink(tag, lastPost.Date)
-              : category
-              ? getCategoryBeforeLink(category, lastPost.Date)
-              : getBeforeLink(lastPost.Date)
-          }
-          passHref
-        >
-          <a className={styles.nextPageLink}>Old ＞</a>
-        </Link>
-      </div>
-    </div>
-  )
-}
-
-export const BackPageLink = ({ firstPost, posts }) => {
-  const router = useRouter()
-  if (!firstPost) return null
-  if (posts.length === 0) return null
-
-  const lastPost = posts[posts.length - 1]
-
-  if (firstPost.Date !== lastPost.Date) return null
-
-  return (
-    <div className={styles.nextContainer}>
-      <div className={styles.buttonSubContainer}>
-        <a className={styles.backButton} onClick={() => router.back()}>
-          {' '}
-          ＜ New{' '}
-        </a>
-      </div>
     </div>
   )
 }
@@ -296,9 +215,7 @@ export const PostLinkList = ({ posts }) => {
       {posts.map((post: Post) => {
         return (
           <li key={post.Slug}>
-            <Link href="/blog/[slug]" as={getBlogLink(post.Slug)} passHref>
-              <a>{post.Title}</a>
-            </Link>
+            <Link href={getBlogLink(post.Slug)}>{post.Title}</Link>
           </li>
         )
       })}
@@ -314,9 +231,7 @@ export const TagLinkList = ({ tags }) => {
       {tags.map((tag: string) => {
         return (
           <li key={tag}>
-            <Link href="/blog/tag/[tag]" as={getTagLink(tag)} passHref>
-              <a>{tag}</a>
-            </Link>
+            <Link href={getTagLink(tag)}>{tag}</Link>
           </li>
         )
       })}
@@ -332,13 +247,7 @@ export const CategoryLinkList = ({ categorys }) => {
       {categorys.map((category: string) => {
         return (
           <li key={category}>
-            <Link
-              href="/blog/category/[category]"
-              as={getCategoryLink(category)}
-              passHref
-            >
-              <a>{category}</a>
-            </Link>
+            <Link href={getCategoryLink(category)}>{category}</Link>
           </li>
         )
       })}
