@@ -1,47 +1,17 @@
-import DocumentHead from '../../components/document-head'
+import styles from '../../../styles/blog.module.css'
+import SubmitForm from '../../../components/submit'
 
-import styles from '../../styles/blog.module.css'
-import SubmitForm from '../../components/submit'
-import {
-  getPosts,
-  getFirstPost,
-  getAllTags,
-  getAllCategorys,
-} from '../../lib/notion/client'
-import { getEditedDate } from '../../lib/blog-helpers'
-import SubmitStyles from '../../styles/submit.module.css'
-import { getAllSubmitPosts } from '../../lib/submit_form/client'
+import { getEditedDate } from '../../../lib/blog-helpers'
+import SubmitStyles from '../../../styles/submit.module.css'
+import { getAllSubmitPosts } from '../../../lib/submit_form/client'
 
-export async function getStaticProps() {
-  const posts = await getPosts()
-  const firstPost = await getFirstPost()
-  const tags = await getAllTags()
-  const categorys = await getAllCategorys()
-  const submitPosts = await getAllSubmitPosts()
+export const revalidate = 60
 
-  return {
-    props: {
-      posts,
-      firstPost,
-      tags,
-      submitPosts,
-      categorys,
-    },
-    revalidate: 60,
-  }
-}
+const RenderSubmit = async () => {
+  const [submitPosts] = await Promise.all([getAllSubmitPosts()])
 
-const RenderPostsSpace = ({
-  //   posts = [],
-  //   firstPost,
-
-  //   tags = [],
-  submitPosts = [],
-  // categorys = [],
-}) => {
   return (
     <div className={styles.container}>
-      <DocumentHead title="Space" />
       <SubmitForm />
       <div className={styles.flexWraper}>
         <div className={styles.mainContent}>
@@ -49,7 +19,7 @@ const RenderPostsSpace = ({
           <div className={SubmitStyles.grid}>
             {submitPosts.map((submitPost) => {
               return (
-                <div className={SubmitStyles.card} key={submitPost.text}>
+                <div className={SubmitStyles.card} key={submitPost.Text}>
                   <div>
                     <p>&#92; &#x1f40d; みんなの単語帳 &#47;</p>
 
@@ -94,4 +64,4 @@ const RenderPostsSpace = ({
   )
 }
 
-export default RenderPostsSpace
+export default RenderSubmit
