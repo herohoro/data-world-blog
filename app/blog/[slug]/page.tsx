@@ -32,7 +32,6 @@ import Toc from '../../../components/toc'
 import TopJump from '../../../components/top-jamp'
 
 export const revalidate = 30
-export const dynamicParams = false
 
 export async function generateStaticParams() {
   const posts = await getAllPosts()
