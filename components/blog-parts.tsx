@@ -103,17 +103,8 @@ export const PostExcerpt = ({ post }) => (
 )
 
 export const PostBody = ({ blocks }) => (
-  <div className="content">
-    <div className={styles.postBody}>
-      <NotionBlocks blocks={blocks} />
-    </div>
-  </div>
-)
-
-export const IndexList = ({ blocks, heading }) => (
-  <div className={styles.indexList}>
-    <h3>{heading}</h3>
-    <MokujiBlocks blocks={blocks} />
+  <div className={styles.postBody}>
+    <NotionBlocks blocks={blocks} isRoot={true} />
   </div>
 )
 
