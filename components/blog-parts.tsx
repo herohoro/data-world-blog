@@ -2,7 +2,6 @@ import Link from 'next/link'
 import React from 'react'
 import { Post } from '../lib/notion/interfaces'
 import NotionBlocks from './notion-block'
-import MokujiBlocks from './mokuji-block'
 import {
   getBeforeLink,
   getBlogLink,
