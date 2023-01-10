@@ -70,6 +70,8 @@ const ApiOgImage = async function (req: NextRequest) {
         style={{
           display: 'flex',
           backgroundColor: '#040d21',
+          border: 'thick double #f66262',
+          borderRadius: '30%',
           backgroundSize: '100% 100%',
           width: '1200px',
           height: '630px',
@@ -83,14 +85,14 @@ const ApiOgImage = async function (req: NextRequest) {
           style={{
             display: 'flex',
             // backgroundColor: '#2c1289',
-            backgroundColor: `linear-gradient(
-              -135deg,
-              #ecdf30 0%,
-              #f66262 20%,
-              #621075 50%,
-              #2c1289 60%,
-              #040d21 100%
-            )`,
+            // backgroundColor: 'linear-gradient(
+            //   -135deg,
+            //   #ecdf30 0%,
+            //   #f66262 20%,
+            //   #621075 50%,
+            //   #2c1289 60%,
+            //   #040d21 100%
+            // )',
             backgroundSize: '100% 100%',
             width: '1140px',
             height: '570px',
@@ -109,7 +111,7 @@ const ApiOgImage = async function (req: NextRequest) {
               width: '1040px',
               height: '490px',
               margin: 'auto',
-              fontSize: '78px',
+              fontSize: '68px',
               textAlign: 'center',
               lineHeight: '130%',
               overflow: 'hidden',
@@ -136,16 +138,16 @@ const ApiOgImage = async function (req: NextRequest) {
             <div
               style={{
                 display: 'flex',
-                backgroundColor: '#2c1289',
+                backgroundColor: '#2c1289a0',
                 width: '640px',
                 height: '64px',
                 margin: 'auto',
-                fontSize: '42px',
+                fontSize: '32px',
                 color: '#fff',
                 overflow: 'hidden',
               }}
             >
-              &#x1f308; {NEXT_PUBLIC_SITE_TITLE}
+              𖤣𖥧𖥣𖡡𖥧𖤣 {NEXT_PUBLIC_SITE_TITLE} ･ᴗ･
             </div>
             <div
               style={{
