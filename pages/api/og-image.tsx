@@ -2,6 +2,7 @@ import { NextRequest } from 'next/server'
 import { ImageResponse } from '@vercel/og'
 import { NEXT_PUBLIC_SITE_TITLE } from '../../app/server-constants'
 import { Post } from '../../lib/notion/interfaces'
+import { renderToHTMLOrFlight } from 'next/dist/server/app-render'
 
 export const config = { runtime: 'experimental-edge' }
 
@@ -68,7 +69,7 @@ const ApiOgImage = async function (req: NextRequest) {
       <div
         style={{
           display: 'flex',
-          backgroundColor: '#f66262',
+          backgroundColor: '#040d21',
           backgroundSize: '100% 100%',
           width: '1200px',
           height: '630px',
@@ -81,7 +82,15 @@ const ApiOgImage = async function (req: NextRequest) {
         <div
           style={{
             display: 'flex',
-            backgroundColor: '#2c1289',
+            // backgroundColor: '#2c1289',
+            backgroundColor: `linear-gradient(
+              -135deg,
+              #ecdf30 0%,
+              #f66262 20%,
+              #621075 50%,
+              #2c1289 60%,
+              #040d21 100%
+            )`,
             backgroundSize: '100% 100%',
             width: '1140px',
             height: '570px',
@@ -101,7 +110,7 @@ const ApiOgImage = async function (req: NextRequest) {
               height: '490px',
               margin: 'auto',
               fontSize: '78px',
-              textAlign: 'left',
+              textAlign: 'center',
               lineHeight: '130%',
               overflow: 'hidden',
               justifyContent: 'center',
@@ -114,7 +123,7 @@ const ApiOgImage = async function (req: NextRequest) {
           <div
             style={{
               display: 'flex',
-              backgroundColor: '#2c1289',
+              // backgroundColor: '#2c1289',
               width: '1040px',
               height: '100px',
               margin: 'auto',
@@ -132,22 +141,22 @@ const ApiOgImage = async function (req: NextRequest) {
                 height: '64px',
                 margin: 'auto',
                 fontSize: '42px',
-                color: '#ffff00',
+                color: '#fff',
                 overflow: 'hidden',
               }}
             >
-              🌏 {NEXT_PUBLIC_SITE_TITLE}
+              &#x1f308; {NEXT_PUBLIC_SITE_TITLE}
             </div>
             <div
               style={{
                 display: 'flex',
-                backgroundColor: '#2c1289',
+                // backgroundColor: '',
                 width: '400px',
                 height: '64px',
                 margin: 'auto',
                 paddingLeft: '130px',
                 fontSize: '42px',
-                color: '#ffff00',
+                color: '#fff',
               }}
             >
               easy
