@@ -70,8 +70,14 @@ const ApiOgImage = async function (req: NextRequest) {
         style={{
           display: 'flex',
           backgroundColor: '#040d21',
-          border: 'thick double #f66262',
-          borderRadius: '30%',
+          // backgroundColor: 'linear-gradient(
+          //   -135deg,
+          //   #ecdf30 0%,
+          //   #f66262 20%,
+          //   #621075 50%,
+          //   #2c1289 60%,
+          //   #040d21 100%
+          // )',
           backgroundSize: '100% 100%',
           width: '1200px',
           height: '630px',
@@ -84,20 +90,13 @@ const ApiOgImage = async function (req: NextRequest) {
         <div
           style={{
             display: 'flex',
-            // backgroundColor: '#2c1289',
-            // backgroundColor: 'linear-gradient(
-            //   -135deg,
-            //   #ecdf30 0%,
-            //   #f66262 20%,
-            //   #621075 50%,
-            //   #2c1289 60%,
-            //   #040d21 100%
-            // )',
+            backgroundColor: '#040d2186',
             backgroundSize: '100% 100%',
             width: '1140px',
             height: '570px',
             margin: 'auto',
             borderRadius: '28px',
+            border: 'thick double #f66262',
             justifyContent: 'center',
             flexDirection: 'column',
             flexWrap: 'nowrap',
@@ -111,7 +110,7 @@ const ApiOgImage = async function (req: NextRequest) {
               width: '1040px',
               height: '490px',
               margin: 'auto',
-              fontSize: '68px',
+              fontSize: '58px',
               textAlign: 'center',
               lineHeight: '130%',
               overflow: 'hidden',
@@ -138,12 +137,12 @@ const ApiOgImage = async function (req: NextRequest) {
             <div
               style={{
                 display: 'flex',
-                backgroundColor: '#2c1289a0',
+                backgroundColor: '#2c128959',
                 width: '640px',
                 height: '64px',
                 margin: 'auto',
                 fontSize: '32px',
-                color: '#fff',
+                color: '#f8f294',
                 overflow: 'hidden',
               }}
             >
