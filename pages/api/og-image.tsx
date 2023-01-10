@@ -2,7 +2,7 @@ import { NextRequest } from 'next/server'
 import { ImageResponse } from '@vercel/og'
 import { NEXT_PUBLIC_SITE_TITLE } from '../../app/server-constants'
 import { Post } from '../../lib/notion/interfaces'
-import { renderToHTMLOrFlight } from 'next/dist/server/app-render'
+// import { renderToHTMLOrFlight } from 'next/dist/server/app-render'
 
 export const config = { runtime: 'experimental-edge' }
 
