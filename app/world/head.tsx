@@ -5,7 +5,7 @@ const WorldHead = () => (
     title="world"
     path="/world"
     description="WORLD_study-friends"
-    urlOgImage={'japanglish-default.jpg'}
+    // urlOgImage={'japanglish-default.jpg'}
   />
 )
 
