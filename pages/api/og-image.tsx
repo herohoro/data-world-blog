@@ -69,7 +69,7 @@ const ApiOgImage = async function (req: NextRequest) {
       <div
         style={{
           display: 'flex',
-          backgroundColor: '#040d21',
+          backgroundColor: '#243456',
           // backgroundColor: 'linear-gradient(
           //   -135deg,
           //   #ecdf30 0%,
