@@ -57,7 +57,10 @@ const ApiOgImage = async function (req: NextRequest) {
     )
   }
 
-  const fontURL = new URL('../../assets/Yomogi-Regular.woff', import.meta.url)
+  const fontURL = new URL(
+    '../../assets/NotoSansJP-Medium.woff',
+    import.meta.url
+  )
   const fontData = await (await fetch(fontURL)).arrayBuffer()
 
   return new ImageResponse(
@@ -165,7 +168,7 @@ const ApiOgImage = async function (req: NextRequest) {
       height: 630,
       fonts: [
         {
-          name: 'Yomogi',
+          name: 'NotoSansJP',
           data: fontData,
           style: 'normal',
         },
